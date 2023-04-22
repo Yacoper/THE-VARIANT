@@ -15368,7 +15368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3978890270141086974}
   m_Layer: 0
-  m_Name: SixthRoom
+  m_Name: 6-th Room
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
