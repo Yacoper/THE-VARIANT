@@ -1,8 +1,7 @@
-    using System;
-    using MyBox;
-    using UnityEngine;
+using System;
+using MyBox;
+using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
