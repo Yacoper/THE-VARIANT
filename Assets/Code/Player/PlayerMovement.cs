@@ -1,14 +1,19 @@
-using System;
-using UnityEngine;
+    using System;
+    using MyBox;
+    using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Input")]
     [SerializeField] private InputReader inputReader;
+    [Header("Player Setting")]
     [SerializeField] private float playerSpeed = 10f;
     [SerializeField] private float jumpForce = 10f;
-    [FormerlySerializedAs("gravityScale")] [SerializeField] private float gravityForce = -9.81f;
+    [SerializeField] private float gravityForce = -9.81f;
+    public bool hasDrag;
+    [ConditionalField("hasDrag")] public float dragValue = 10f;
     private CharacterController characterController;
     private Vector3 moveDir;
     private Vector3 yVelocity;
@@ -32,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         isGrounded = characterController.isGrounded;
+        Debug.Log(dragValue);
     }
 
     private void FixedUpdate()
@@ -39,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         GetMoveDirection(inputReader.GetMoveVector());
         MovePlayer();
         ApplyGravity();
-        Debug.Log(yVelocity);
+        //Debug.Log(yVelocity);
     }
 
     private void Jump(InputAction.CallbackContext callbackContext)
@@ -67,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         yVelocity.y += gravityForce * Time.fixedDeltaTime;
         if (isGrounded && yVelocity.y < 0)
         {
-            yVelocity.y = -2f;
+            yVelocity.y = -0.1f;
         }
         yVelocity.y = Math.Clamp(yVelocity.y,-50f, 50f);
         characterController.Move(yVelocity);
