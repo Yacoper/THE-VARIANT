@@ -15,6 +15,12 @@ public class PlayerLook : MonoBehaviour
     private float lookX;
     private float lookY;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     private void LateUpdate()
     {
         GetInput(inputReader.GetLookInput());
