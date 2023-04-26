@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Input")]
     [SerializeField] private InputReader inputReader;
-    [Header("Player Setting")]
+    [Header("Player Settings")]
     [SerializeField] private PlayerSettingsSO playerSettings;
     
     private CharacterController characterController;

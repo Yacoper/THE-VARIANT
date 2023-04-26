@@ -284,9 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 295060c583aca9145a7e7f2b73930ab8, type: 2}
-  playerSpeed: 8
-  jumpForce: 0.4
-  gravityForce: -1
+  playerSettings: {fileID: 11400000, guid: 05c91d0671c2008488e2644a28adf35f, type: 2}
 --- !u!114 &1867536418
 MonoBehaviour:
   m_ObjectHideFlags: 0
