@@ -64,14 +64,22 @@ public class PlayerMovement : MonoBehaviour
         moveDir.z = input.y;
     }
 
-
     private void ApplyGravity()
     {
-        yVelocity.y += gravityForce * Time.fixedDeltaTime * (1f - dragValue);
         if (isGrounded && yVelocity.y < 0)
         {
             yVelocity.y = -0.1f;
         }
+        
+        if (!hasDrag)
+        {
+            yVelocity.y += gravityForce * Time.fixedDeltaTime;
+        }
+        else
+        {
+            yVelocity.y += gravityForce * (1f - dragValue) * Time.fixedDeltaTime;
+        }
+
         yVelocity.y = Math.Clamp(yVelocity.y,-50f, 50f);
         characterController.Move(yVelocity);
     }
