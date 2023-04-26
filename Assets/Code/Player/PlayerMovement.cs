@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float gravityForce = -9.81f;
     public bool hasDrag;
-    [ConditionalField("hasDrag")] public float dragValue = 10f;
+    [ConditionalField("hasDrag")] [Range(0.0f, 1.0f)] [Tooltip("Decreases the drag by the given percentage.")] public float dragValue = 0.05f;
     private CharacterController characterController;
     private Vector3 moveDir;
     private Vector3 yVelocity;
@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         isGrounded = characterController.isGrounded;
-        Debug.Log(dragValue);
     }
 
     private void FixedUpdate()
@@ -44,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
         GetMoveDirection(inputReader.GetMoveVector());
         MovePlayer();
         ApplyGravity();
-        //Debug.Log(yVelocity);
     }
 
     private void Jump(InputAction.CallbackContext callbackContext)
@@ -69,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ApplyGravity()
     {
-        yVelocity.y += gravityForce * Time.fixedDeltaTime;
+        yVelocity.y += gravityForce * Time.fixedDeltaTime * (1f - dragValue);
         if (isGrounded && yVelocity.y < 0)
         {
             yVelocity.y = -0.1f;
