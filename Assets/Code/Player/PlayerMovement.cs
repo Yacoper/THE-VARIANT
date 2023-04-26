@@ -8,15 +8,18 @@ public class PlayerMovement : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputReader inputReader;
     [Header("Player Setting")]
-    [SerializeField] private float playerSpeed = 10f;
-    [SerializeField] private float jumpForce = 10f;
-    [SerializeField] private float gravityForce = -9.81f;
-    public bool hasDrag;
-    [ConditionalField("hasDrag")] [Range(0.0f, 1.0f)] [Tooltip("Decreases the drag by the given percentage.")] public float dragValue = 0.05f;
+    [SerializeField] private PlayerSettingsSO playerSettings;
+    
     private CharacterController characterController;
     private Vector3 moveDir;
     private Vector3 yVelocity;
     private bool isGrounded;
+    
+    private float playerSpeed;
+    private float jumpForce;
+    private float gravityForce;
+    private bool hasDrag;
+    private float dragValue;
 
     private void OnEnable()
     {
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        Init();
     }
 
     private void Update()
@@ -43,6 +47,15 @@ public class PlayerMovement : MonoBehaviour
         GetMoveDirection(inputReader.GetMoveVector());
         MovePlayer();
         ApplyGravity();
+    }
+
+    private void Init()
+    {
+        playerSpeed = playerSettings.PlayerSpeed;
+        jumpForce = playerSettings.JumpForce;
+        gravityForce = playerSettings.GravityForce;
+        hasDrag = playerSettings.hasDrag;
+        dragValue = playerSettings.dragValue;
     }
 
     private void Jump(InputAction.CallbackContext callbackContext)
