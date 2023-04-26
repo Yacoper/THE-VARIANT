@@ -70,6 +70,11 @@ public class PlayerMovement : MonoBehaviour
         {
             yVelocity.y = -0.1f;
         }
+
+        if (HasHitCeiling())
+        {
+            yVelocity.y = -0.03f;
+        }
         
         if (!hasDrag)
         {
@@ -82,5 +87,12 @@ public class PlayerMovement : MonoBehaviour
 
         yVelocity.y = Math.Clamp(yVelocity.y,-50f, 50f);
         characterController.Move(yVelocity);
+    }
+
+    private bool HasHitCeiling()
+    {
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, Vector3.up * 1.5f, Color.red );
+        return Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f);
     }
 }
