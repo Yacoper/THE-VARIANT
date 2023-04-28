@@ -9,10 +9,7 @@ public class InputReader : ScriptableObject
 
     private void OnEnable()
     {
-        if (gameInput == null)
-        {
-            gameInput = new GameInput();
-        }
+        gameInput ??= new GameInput();
 
         gameInput.Gameplay.Enable();
     }
@@ -37,4 +34,10 @@ public class InputReader : ScriptableObject
         add => gameInput.Gameplay.Jump.performed += value;
         remove => gameInput.Gameplay.Jump.performed -= value;
     }
+    
+    public event Action<InputAction.CallbackContext> PickUpDropAction
+    {
+        add => gameInput.Gameplay.PickUpDrop.performed += value;
+        remove => gameInput.Gameplay.PickUpDrop.performed -= value;
+    } 
 }
