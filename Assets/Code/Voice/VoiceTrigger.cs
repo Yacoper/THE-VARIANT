@@ -2,46 +2,76 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
 
 public class VoiceTrigger : MonoBehaviour
 {
     public SOVoice soVoice;
+
     public TextMeshProUGUI voiceLineUI;
     public TextMeshProUGUI characterNameUI;
+
     public AudioSource voiceLine;
     public GameObject voiceLineBaner;
+
+    private static bool isCurrentlyPlaying = false;
+    private Queue<SOVoice> soVoiceArray;
+
     void Start()
     {
         voiceLineUI.text = String.Empty;
+        soVoiceArray = new Queue<SOVoice> ();
     }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (!isCurrentlyPlaying)
         {
-            voiceLineBaner.SetActive(true);
-            voiceLine.clip = soVoice.voiceRecord;
-            characterNameUI.text = soVoice.character;
-            StartMonologTyping();
-            voiceLine.Play();
-            gameObject.GetComponent<BoxCollider>().enabled = false;
+            if (other.tag == "Player")
+            {
+                gameObject.GetComponent<BoxCollider>().enabled = false;
+                MonologSystem(soVoice);
+            }
+        }
+        else
+        {
+             gameObject.GetComponent<BoxCollider>().enabled = false;
+             soVoiceArray.Enqueue(soVoice);
         }
     }
-    void StartMonologTyping()
+
+    void Update()
     {
-        StartCoroutine(TypeLine());
+        if (soVoiceArray.Count > 0 && !isCurrentlyPlaying)
+        {
+            MonologSystem(soVoiceArray.Dequeue());
+        }
     }
-    IEnumerator TypeLine()
+
+    void MonologSystem(SOVoice sov)
     {
-        foreach (char c in soVoice.voiceLineText.ToCharArray())
+        isCurrentlyPlaying = true;
+        voiceLineBaner.SetActive(true);
+        voiceLine.clip = sov.voiceRecord;
+        characterNameUI.text = sov.character;
+        StartMonologTyping(sov);
+        voiceLine.Play();
+    }
+
+    void StartMonologTyping(SOVoice sov)
+    {
+        StartCoroutine(TypeLine(sov));
+    }
+    IEnumerator TypeLine(SOVoice sov)
+    {
+        foreach (char c in sov.voiceLineText.ToCharArray())
         {
             voiceLineUI.text += c;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(soVoice.duration);
         }
         yield return new WaitForSeconds(4);
         voiceLineUI.text = String.Empty;
         voiceLineBaner.SetActive(false);
+        isCurrentlyPlaying = false;
     }
 }
