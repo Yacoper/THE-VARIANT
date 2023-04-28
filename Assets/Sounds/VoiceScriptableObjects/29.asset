@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eeade4c08239474990e31d61eba3b9d, type: 3}
+  m_Name: 29
+  m_EditorClassIdentifier: 
+  voiceLineText: I want you to experience couple of works of art from the field of
+    humanism. I would like to treat you to one of my favourite pieces from the industrial
+    age.
+  voiceRecord: {fileID: 8300000, guid: d528665556c44e14e9f747073ae07071, type: 3}
+  duration: 0.05
+  character: Dr Wilson

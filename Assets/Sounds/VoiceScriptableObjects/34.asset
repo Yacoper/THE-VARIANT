@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eeade4c08239474990e31d61eba3b9d, type: 3}
+  m_Name: 34
+  m_EditorClassIdentifier: 
+  voiceLineText: I am incredibly thankful for the time we spent together and everything
+    that you did for the evolvement of our laboratory. You definitely deserved to
+    get a prize. Please, walk over to the platform. This cake is just for you.
+  voiceRecord: {fileID: 8300000, guid: 31857c85f1aadf64a9a65e6b5692491c, type: 3}
+  duration: 0.05
+  character: Dr Wilson
