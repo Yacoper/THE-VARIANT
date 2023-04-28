@@ -1,5 +1,4 @@
 using System;
-using MyBox;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputReader inputReader;
     [Header("Player Settings")]
-    [SerializeField] private PlayerSettingsSO playerSettings;
+    [SerializeField] private PlayerMovementSettingsSO playerMovementSettings;
     
     private CharacterController characterController;
     private Vector3 moveDir;
@@ -51,11 +50,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Init()
     {
-        playerSpeed = playerSettings.PlayerSpeed;
-        jumpForce = playerSettings.JumpForce;
-        gravityForce = playerSettings.GravityForce;
-        hasDrag = playerSettings.hasDrag;
-        dragValue = playerSettings.dragValue;
+        playerSpeed = playerMovementSettings.PlayerSpeed;
+        jumpForce = playerMovementSettings.JumpForce;
+        gravityForce = playerMovementSettings.GravityForce;
+        hasDrag = playerMovementSettings.hasDrag;
+        dragValue = playerMovementSettings.dragValue;
     }
 
     private void Jump(InputAction.CallbackContext callbackContext)
@@ -105,7 +104,9 @@ public class PlayerMovement : MonoBehaviour
     private bool HasHitCeiling()
     {
         RaycastHit hit;
+#if UNITY_EDITOR
         Debug.DrawRay(transform.position, Vector3.up * 1.5f, Color.red );
+#endif
         return Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f);
     }
 }
