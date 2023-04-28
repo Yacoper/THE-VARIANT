@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: "Splendid. I would also like you to sit down, just relax. Don\u2019t
     make any rapid moves. You are going to feel, as if mosquito was biting you."
-  voiceRecord: {fileID: 8300000, guid: 13524e30a03b2c646abc0d8e280d29e4, type: 3}
+  voiceRecord: {fileID: 8300000, guid: f3771cfda602fd347a81bab089dadcd3, type: 3}
   duration: 0.05
   character: Dr Wilson

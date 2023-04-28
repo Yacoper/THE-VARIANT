@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: But before you participate in first task, please condescend and
     move towards a station with a green light.
-  voiceRecord: {fileID: 8300000, guid: 5d09c5bb309e41b48bf5e3b59286538d, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 5b2b184fd1681fa40a2f8279920240a3, type: 3}
   duration: 0.05
   character: Dr Wilson
