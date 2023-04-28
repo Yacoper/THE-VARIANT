@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eeade4c08239474990e31d61eba3b9d, type: 3}
+  m_Name: 26
+  m_EditorClassIdentifier: 
+  voiceLineText: By analogy to cubes that came before, gravitational can be used
+    for the whole room.
+  voiceRecord: {fileID: 8300000, guid: 122234a720618524cbc532215fe13d7d, type: 3}
+  duration: 0.05
+  character: Dr Wilson
