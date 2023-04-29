@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 213a5ca7456e9694f9b2786ad47e8d31, type: 3}
   m_Name: PlayerMovementSettings
   m_EditorClassIdentifier: 
-  <playerSpeed>k__BackingField: 8
-  <jumpForce>k__BackingField: 0.4
-  <gravityForce>k__BackingField: -1
+  <PlayerSpeed>k__BackingField: 10
+  <JumpForce>k__BackingField: 0.3
+  <GravityForce>k__BackingField: -1
   hasDrag: 1
   dragValue: 0.05
