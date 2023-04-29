@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eeade4c08239474990e31d61eba3b9d, type: 3}
+  m_Name: 19
+  m_EditorClassIdentifier: 
+  voiceLineText: Red cube helped you to interact with objects by improving your strength
+    in a sense by manipulating their mass. Green cube, that you can find in front
+    of you, will help you in a different field. This time, we are going to test your
+    agility.
+  voiceRecord: {fileID: 8300000, guid: 680161a07c2cbbe44a787236576886ff, type: 3}
+  duration: 0.05
+  character: Dr Wilson
