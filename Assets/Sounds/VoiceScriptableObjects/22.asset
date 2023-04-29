@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 22
   m_EditorClassIdentifier: 
   voiceLineText: "Race is going to start in 3\u2026 2\u2026 1\u2026 Go!"
-  voiceRecord: {fileID: 8300000, guid: 65112cb892b4aa84288205a40a916e33, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 04af647845a14694fa7063216a82ef78, type: 3}
   duration: 0.05
   character: Dr Wilson

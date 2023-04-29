@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: "I\u2019m starting to get the feeling that epigrams evoke increased
     feelings in the subject thus far."
-  voiceRecord: {fileID: 8300000, guid: 8310d00fa6e967b4e87b8bdc2d1eb569, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 8b67900e82eff2f4a90cbd52dff4ead7, type: 3}
   duration: 0.05
   character: Dr Wilson

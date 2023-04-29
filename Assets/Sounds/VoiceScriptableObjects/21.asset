@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: By analogy to red cube, the green one can be connected with the
     distribution platform. It is going to affect velocity of every object in the
     room. To test it, try to win the race against the DOG70R.
-  voiceRecord: {fileID: 8300000, guid: 526194b7b4197e241b551cb5861b528e, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 460dec3ae5a4aa74f89cf01d3c21ce8e, type: 3}
   duration: 0.05
   character: Dr Wilson

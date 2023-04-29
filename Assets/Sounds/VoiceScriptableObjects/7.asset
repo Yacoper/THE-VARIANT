@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 7
   m_EditorClassIdentifier: 
   voiceLineText: Now, please deposit it on a platform that is next to the exit gate.
-  voiceRecord: {fileID: 8300000, guid: 546e743caa4f77d41a9f0db1bbf259ef, type: 3}
+  voiceRecord: {fileID: 8300000, guid: eabc4ab7e88c7c54db4ea83f34e688c0, type: 3}
   duration: 0.05
   character: Dr Wilson

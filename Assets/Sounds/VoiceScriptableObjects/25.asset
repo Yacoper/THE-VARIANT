@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 25
   m_EditorClassIdentifier: 
   voiceLineText: Now you should feel a little bit lighter.
-  voiceRecord: {fileID: 8300000, guid: b032f95d1ceca5c4fa296aa90569298b, type: 3}
+  voiceRecord: {fileID: 8300000, guid: c1785483ba5632049b15e6f62a75c59d, type: 3}
   duration: 0.05
   character: Dr Wilson

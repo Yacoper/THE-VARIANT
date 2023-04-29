@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: By analogy to cubes that came before, gravitational can be used
     for the whole room.
-  voiceRecord: {fileID: 8300000, guid: 122234a720618524cbc532215fe13d7d, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 10660f916c6ef9244b3ca66e630e3695, type: 3}
   duration: 0.05
   character: Dr Wilson

@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: I am incredibly thankful for the time we spent together and everything
     that you did for the evolvement of our laboratory. You definitely deserved to
     get a prize. Please, walk over to the platform. This cake is just for you.
-  voiceRecord: {fileID: 8300000, guid: 31857c85f1aadf64a9a65e6b5692491c, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 82bd9ee60ba7dbd48a47fb97e4ccb2f8, type: 3}
   duration: 0.05
   character: Dr Wilson
