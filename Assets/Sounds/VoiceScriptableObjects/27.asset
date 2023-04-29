@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: 74% after interacting with all of the cubes. I was expecting a way
     bigger improvement compared to prior iteration. Although this score is barely
     on the verge of acceptance.
-  voiceRecord: {fileID: 8300000, guid: e47cca4ebf93d4f4390d6b46a7af1789, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 7f02cfe2ca9c37f41943fd22b7447cf3, type: 3}
   duration: 0.05
   character: Dr Wilson

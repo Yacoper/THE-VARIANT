@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: Marvellous! Test subject finished the area 1.12 second faster than
     prior iteration. We are dealing with a 13% advancement.
-  voiceRecord: {fileID: 8300000, guid: 242e72fb8f385be418190bd7662b42a2, type: 3}
+  voiceRecord: {fileID: 8300000, guid: e28fedd68affd434eb3dd8ca35720cf6, type: 3}
   duration: 0.05
   character: Dr Wilson
