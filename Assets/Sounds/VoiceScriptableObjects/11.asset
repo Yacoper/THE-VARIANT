@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: If you look around, you will find that route to the next room is
     behind a glass wall. Object that is located between glass pane is way too heavy
     in comparison to your own strength.
-  voiceRecord: {fileID: 8300000, guid: 50e023a99663e5044b118f01e67e21b0, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 74068ebfff71e1547926379671a1d1cd, type: 3}
   duration: 0.05
   character: Dr Wilson

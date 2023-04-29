@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: 80%? I was expecting a better score, but this will do. In the next
     iteration I will have to prioritize that. Give me constant compatibility analysis
     and notification if it is going to change.
-  voiceRecord: {fileID: 8300000, guid: 5a58744c2e0625b428fbd9b5c4f2db7c, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 42859e80f579a2049a3da7ae4dc4c363, type: 3}
   duration: 0.05
   character: Dr Wilson

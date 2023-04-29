@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: Huh, molecular compression of cubes seems to be a good call. Looks
     incredibly efficiently and functionally. I would only improve grip speed. In
     addition I need to add a place to support carried cubes.
-  voiceRecord: {fileID: 8300000, guid: 013abb533ec88b941a484f4bb02aa3a4, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 1cf081b5dac26cd4e8dcfb48ba46f447, type: 3}
   duration: 0.05
   character: Dr Wilson

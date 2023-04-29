@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: Naturally, you can merge the abilities of cubes. For example by
     increasing velocity of objects in the room. Pushed by you object with red cube
     is going to move further than before.
-  voiceRecord: {fileID: 8300000, guid: 77040b1922571c940bfd0b5ab6a15fd0, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 0d794243f4d3f75488d13509d120da1f, type: 3}
   duration: 0.05
   character: Dr Wilson

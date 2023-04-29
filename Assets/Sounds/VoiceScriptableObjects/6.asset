@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: Upcoming experiments were designed to test your ability of logical
     thinking. To start on the right foot, I have putted a cube in front of you. Please,
     try to lift it up.
-  voiceRecord: {fileID: 8300000, guid: 32a4c7d20b9455449a62de9411732ac1, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 1aa5adb63b8d42d4b83372d5416b6961, type: 3}
   duration: 0.05
   character: Dr Wilson

@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: "Look who decided to join us, BA70R, meet DOG70R our laboratory
     mascot. You don\u2019t have to worry, this dog loves to wander trough the laboratory
     without purpose and watch experiments that are being conducted."
-  voiceRecord: {fileID: 8300000, guid: b9ccaf2f0f823f94aba36da70432dc15, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 40bb4a480a481424aa0381f970a10206, type: 3}
   duration: 0.05
   character: Dr Wilson

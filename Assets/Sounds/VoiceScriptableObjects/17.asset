@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: "You don\u2019t have to worry about the weight of those, in some
     sense\u2026 speaking of course very colloquially, you gain super strength! Feels
     good, doesn\u2019t it? I want the analysis of compatibility system."
-  voiceRecord: {fileID: 8300000, guid: ec45b6acf86c3c741868b2170c530106, type: 3}
+  voiceRecord: {fileID: 8300000, guid: ecd5bff9ee29d2143932d69be40b8727, type: 3}
   duration: 0.05
   character: Dr Wilson

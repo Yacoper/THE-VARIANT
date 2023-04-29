@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: 'Just like predicted, Test subject could not have won, if not for
     the head start given by the DOG70R. Reinforce the hamstring, increase the influence
     of the green cube on the organism. '
-  voiceRecord: {fileID: 8300000, guid: 8523391c46d684c45923891c7e1dbc53, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 0ef56944bc52ebd438d8e0166535a864, type: 3}
   duration: 0.05
   character: Dr Wilson

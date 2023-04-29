@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   voiceLineText: 'I think we are ready to start, head towards the exit. '
-  voiceRecord: {fileID: 8300000, guid: 9090d9387743c564daec00d8c001642d, type: 3}
+  voiceRecord: {fileID: 8300000, guid: a444751b530e6b343b318fb3c2d6c507, type: 3}
   duration: 0.05
   character: Dr Wilson

@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: 'Change in lighting is a temporary side effect, that said, it can
     help you to identify if particular room is under the influence of particular
     essence. Now, try to move objects that stand in your way. '
-  voiceRecord: {fileID: 8300000, guid: 29966c535d074d44980cfd5fd91af2b6, type: 3}
+  voiceRecord: {fileID: 8300000, guid: fd6adca2257f6c347a87ae1db27baf97, type: 3}
   duration: 0.05
   character: Dr Wilson
