@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: I want you to experience couple of works of art from the field of
     humanism. I would like to treat you to one of my favourite pieces from the industrial
     age.
-  voiceRecord: {fileID: 8300000, guid: d528665556c44e14e9f747073ae07071, type: 3}
+  voiceRecord: {fileID: 8300000, guid: b997527439531f440ac1632104463cc2, type: 3}
   duration: 0.05
   character: Dr Wilson

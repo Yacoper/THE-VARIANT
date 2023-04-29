@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: Outstanding! Test subject got through the room only after pointing
     out where he has to look.
-  voiceRecord: {fileID: 8300000, guid: 4a6fd0ba69debf24db233b4cb9ba3ef5, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 7906193b002a8f445a0cbc082c73e5dd, type: 3}
   duration: 0.05
   character: Dr Wilson
