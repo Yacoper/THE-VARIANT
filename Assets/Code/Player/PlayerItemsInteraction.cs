@@ -16,7 +16,7 @@ public class PlayerItemsInteraction : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private bool hasItemInHand;
-    private PickUpAbleItem pickUpItem;
+    private PickUpAbleItem pickUpAbleItem;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class PlayerItemsInteraction : MonoBehaviour
     
     private void HandlePickUpDropAction(InputAction.CallbackContext callbackContext)
     {
-        if(pickUpItem == null)
+        if(pickUpAbleItem == null)
             TryPickUp();
         else
             TryDrop();
@@ -43,20 +43,38 @@ public class PlayerItemsInteraction : MonoBehaviour
 
     private void TryPickUp()
     {
-        if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit,
-                values.PickUpDistance, values.PickUpItemsLayerMask))
+        if (!Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit,
+                values.PickUpDistance, values.PickUpItemsLayerMask)) return;
+        
+        if (!raycastHit.transform.TryGetComponent(out pickUpAbleItem))
+            return;
+
+        if (raycastHit.collider.CompareTag("Cube"))
         {
-            if (raycastHit.transform.TryGetComponent(out pickUpItem))
-            {
-                pickUpItem.PickUp(pickUpTargetTransform);
-            }
+            PickUpCube();
         }
+        else
+        {
+            PickUpItem();
+        }
+    }
+
+    private void PickUpCube()
+    {
+        pickUpAbleItem.GetComponent<Cube>();
+        pickUpAbleItem.PickUp(pickUpTargetTransform);
+    }
+    
+    private void PickUpItem()
+    {
+        pickUpAbleItem.GetComponent<PickUpItem>();
+        pickUpAbleItem.PickUp(pickUpTargetTransform);
     }
 
     private void TryDrop()
     {
-        pickUpItem.Drop();
-        pickUpItem = null;
+        pickUpAbleItem.Drop();
+        pickUpAbleItem = null;
     }
 
     private void OnValidate()
