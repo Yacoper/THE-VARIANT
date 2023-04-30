@@ -105,8 +105,14 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit hit;
 #if UNITY_EDITOR
-        Debug.DrawRay(transform.position, Vector3.up * 1.5f, Color.red );
+        Debug.DrawRay(transform.position, Vector3.up * 1.5f, Color.red);
 #endif
         return Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f);
+    }
+
+    private void OnValidate()
+    {
+        ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
+        ValidateUtilities.NullCheckVariable(this, nameof(playerMovementSettings), playerMovementSettings, true);
     }
 }
