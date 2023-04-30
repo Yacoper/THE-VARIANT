@@ -97,6 +97,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnValidate()
     {
         ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
-        ValidateUtilities.NullCheckVariable(this, nameof(playerMovementSettings), playerMovementSettings, true);
+        ValidateUtilities.NullCheckVariable(this, nameof(values), values, true);
     }
 }
