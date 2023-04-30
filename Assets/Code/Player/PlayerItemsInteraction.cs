@@ -8,7 +8,7 @@ public class PlayerItemsInteraction : MonoBehaviour
     [SerializeField] private InputReader inputReader;
     
     [Header("Player Settings")]
-    [SerializeField] private PlayerPickUpDropSettingsSO pickUpDropSettings;
+    [SerializeField] private PlayerPickUpDropSettingsSO values;
     
     [Header("Transform References")]
     [SerializeField] private Transform playerCameraTransform;
@@ -18,13 +18,9 @@ public class PlayerItemsInteraction : MonoBehaviour
     private bool hasItemInHand;
     private PickUpItem pickUpItem;
 
-    private float pickUpDistance;
-    private LayerMask pickUpItemsLayerMask;
-
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
-        Init();
     }
 
     private void OnEnable()
@@ -35,12 +31,6 @@ public class PlayerItemsInteraction : MonoBehaviour
     private void OnDisable()
     {
         inputReader.PickUpDropAction -= HandlePickUpDropAction;
-    }
-
-    private void Init()
-    {
-        pickUpDistance = pickUpDropSettings.PickUpDistance;
-        pickUpItemsLayerMask = pickUpDropSettings.PickUpItemsLayerMask;
     }
     
     private void HandlePickUpDropAction(InputAction.CallbackContext callbackContext)
@@ -54,7 +44,7 @@ public class PlayerItemsInteraction : MonoBehaviour
     private void TryPickUp()
     {
         if (Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit,
-                pickUpDistance, pickUpItemsLayerMask))
+                values.PickUpDistance, values.PickUpItemsLayerMask))
         {
             if (raycastHit.transform.TryGetComponent(out pickUpItem))
             {
