@@ -66,6 +66,7 @@ public class PlayerItemsInteraction : MonoBehaviour
         cube = raycastHit.transform.GetComponent<Cube>();
         cube.PickUp(pickUpTargetTransform);
         currentBuff = cube.BuffType;
+        ApplyBuff();
         hasItemInHand = true;
     }
     
@@ -85,11 +86,50 @@ public class PlayerItemsInteraction : MonoBehaviour
         }
         else
         {
+            ClearBuff();
             cube.Drop();
             cube = null;
         }
 
         hasItemInHand = false;
+    }
+
+    private void ApplyBuff()
+    {
+        switch (currentBuff)
+        {
+            case BuffTypes.None:
+                break;
+            case BuffTypes.RedBuff:
+                break;
+            case BuffTypes.GreenBuff:
+                playerMovement.HasGreenBuff = true;
+                break;
+            case BuffTypes.BlueBuff:
+                playerMovement.HasBlueBuff = true;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
+    private void ClearBuff()
+    {
+        switch (currentBuff)
+        {
+            case BuffTypes.RedBuff:
+                break;
+            case BuffTypes.GreenBuff:
+                playerMovement.HasGreenBuff = false;
+                break;
+            case BuffTypes.BlueBuff:
+                playerMovement.HasBlueBuff = false;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+
+        currentBuff = BuffTypes.None;
     }
 
     private void OnValidate()
