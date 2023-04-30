@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Cube : PickUpAbleItem
 {
     public BuffTypes BuffType
@@ -6,5 +8,5 @@ public class Cube : PickUpAbleItem
         set => buffType = value;
     }
     
-    private BuffTypes buffType;
+    [SerializeField] private BuffTypes buffType;
 }
