@@ -16,7 +16,7 @@ public class PlayerLook : MonoBehaviour
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        Cursor.visible = true;
     }
 
     private void LateUpdate()
@@ -43,5 +43,4 @@ public class PlayerLook : MonoBehaviour
     {
         transform.Rotate(Vector3.up * (lookX * Time.deltaTime * xSensitivity));
     }
-    
 }
