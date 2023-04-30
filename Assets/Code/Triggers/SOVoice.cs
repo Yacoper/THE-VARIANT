@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-[CreateAssetMenu(fileName = "New Voice", menuName = "VoiceLine")]
+[CreateAssetMenu(fileName = "New Voice", menuName = "ScriptableObjects/VoiceLine")]
 public class SOVoice : ScriptableObject
 {
     public string voiceLineText;
