@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -68,4 +69,11 @@ public class PlayerItemsInteraction : MonoBehaviour
         pickUpItem = null;
     }
 
+    private void OnValidate()
+    {
+        ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
+        ValidateUtilities.NullCheckVariable(this, nameof(pickUpDropSettings), pickUpDropSettings, true);
+        ValidateUtilities.NullCheckVariable(this, nameof(playerCameraTransform), playerCameraTransform, true);
+        ValidateUtilities.NullCheckVariable(this, nameof(pickUpTargetTransform), pickUpTargetTransform, true);
+    }
 }
