@@ -43,5 +43,10 @@ public class PlayerLook : MonoBehaviour
     {
         transform.Rotate(Vector3.up * (lookX * Time.deltaTime * xSensitivity));
     }
-    
+
+    private void OnValidate()
+    {
+        ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
+        ValidateUtilities.NullCheckVariable(this, nameof(playerCamera), playerCamera, true);
+    }
 }
