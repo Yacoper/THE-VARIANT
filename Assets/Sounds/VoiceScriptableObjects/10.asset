@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: "This time the cube is going to differ from the last one. It is
     one of our biggest inventions thus far. It is a magnetic cube, capable of influencing
     almost every object due to it\u2019s powerful magnetic field. Handle it carefully."
-  voiceRecord: {fileID: 8300000, guid: ee075d21131af9c43ad02e56bd5ef17a, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 32739dd17c5fa0345b0c3af81a1ec3f2, type: 3}
   duration: 0.05
   character: Dr Wilson

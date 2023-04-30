@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: "I would like to talk with you about your impressions about conducted
     experiments and about other forms of\u2026"
-  voiceRecord: {fileID: 8300000, guid: 962d4a3ad0343bd438ec5b9692af8470, type: 3}
+  voiceRecord: {fileID: 8300000, guid: e7cf1f835551e3845ac8c524080317e3, type: 3}
   duration: 0.05
   character: Dr Wilson

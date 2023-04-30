@@ -16,6 +16,6 @@ MonoBehaviour:
     in a sense by manipulating their mass. Green cube, that you can find in front
     of you, will help you in a different field. This time, we are going to test your
     agility.
-  voiceRecord: {fileID: 8300000, guid: 680161a07c2cbbe44a787236576886ff, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 9f0144385291a3a4ba8fb1ed3e01eb2a, type: 3}
   duration: 0.05
   character: Dr Wilson

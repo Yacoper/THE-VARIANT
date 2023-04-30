@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: What is your attitude towards epigrams? Those short poetic forms,
     that are often presented in a form of aphorism once played a big role in human
     culture due to poems. Let me treat you with one of those.
-  voiceRecord: {fileID: 8300000, guid: 54fc4a80922b268439f6048498f4926a, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 146a75788c415714f95aad31186c5205, type: 3}
   duration: 0.05
   character: Dr Wilson

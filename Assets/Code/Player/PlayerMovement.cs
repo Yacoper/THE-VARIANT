@@ -7,19 +7,13 @@ public class PlayerMovement : MonoBehaviour
     [Header("Input")]
     [SerializeField] private InputReader inputReader;
     [Header("Player Settings")]
-    [SerializeField] private PlayerMovementSettingsSO playerMovementSettings;
+    [SerializeField] private PlayerMovementSettingsSO values;
     
     private CharacterController characterController;
     private Vector3 moveDir;
     private Vector3 yVelocity;
     private bool isGrounded;
     
-    private float playerSpeed;
-    private float jumpForce;
-    private float gravityForce;
-    private bool hasDrag;
-    private float dragValue;
-
     private void OnEnable()
     {
         inputReader.JumpAction += Jump;
@@ -33,7 +27,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        Init();
     }
 
     private void Update()
@@ -48,26 +41,17 @@ public class PlayerMovement : MonoBehaviour
         ApplyGravity();
     }
 
-    private void Init()
-    {
-        playerSpeed = playerMovementSettings.PlayerSpeed;
-        jumpForce = playerMovementSettings.JumpForce;
-        gravityForce = playerMovementSettings.GravityForce;
-        hasDrag = playerMovementSettings.hasDrag;
-        dragValue = playerMovementSettings.dragValue;
-    }
-
     private void Jump(InputAction.CallbackContext callbackContext)
     {
         if(!isGrounded)
             return;
 
-        yVelocity.y = jumpForce;
+        yVelocity.y = values.JumpForce;
     }
 
     private void MovePlayer()
     {
-        characterController.Move(transform.TransformDirection(moveDir) * (Time.deltaTime * playerSpeed));
+        characterController.Move(transform.TransformDirection(moveDir) * (Time.deltaTime * values.PlayerSpeed));
     }
 
     private void GetMoveDirection(Vector2 input)
@@ -88,13 +72,13 @@ public class PlayerMovement : MonoBehaviour
             yVelocity.y = -0.03f;
         }
         
-        if (!hasDrag)
+        if (!values.hasDrag)
         {
-            yVelocity.y += gravityForce * Time.fixedDeltaTime;
+            yVelocity.y += values.GravityForce * Time.fixedDeltaTime;
         }
         else
         {
-            yVelocity.y += gravityForce * (1f - dragValue) * Time.fixedDeltaTime;
+            yVelocity.y += values.GravityForce * (1f - values.dragValue) * Time.fixedDeltaTime;
         }
 
         yVelocity.y = Math.Clamp(yVelocity.y,-50f, 50f);
@@ -105,8 +89,14 @@ public class PlayerMovement : MonoBehaviour
     {
         RaycastHit hit;
 #if UNITY_EDITOR
-        Debug.DrawRay(transform.position, Vector3.up * 1.5f, Color.red );
+        Debug.DrawRay(transform.position, Vector3.up * 1.5f, Color.red);
 #endif
         return Physics.Raycast(transform.position, Vector3.up, out hit, 1.5f);
+    }
+
+    private void OnValidate()
+    {
+        ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
+        ValidateUtilities.NullCheckVariable(this, nameof(values), values, true);
     }
 }

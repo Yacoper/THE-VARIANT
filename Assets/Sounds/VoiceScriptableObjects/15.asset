@@ -18,6 +18,6 @@ MonoBehaviour:
     just for that. You just have to soak the room with the essence of the cube. You
     can do that with the use of distribution platforms. Try to place your cube in
     one of them."
-  voiceRecord: {fileID: 8300000, guid: 025a80b394a09484299039c3809c1063, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 37516973cbb9f874aa50e2c9102d89be, type: 3}
   duration: 0.05
   character: Dr Wilson

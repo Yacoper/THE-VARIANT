@@ -15,6 +15,6 @@ MonoBehaviour:
   voiceLineText: "It\u2019s incredibly pleasant to handle a cube like that, don\u2019t
     you think? Now imagine what could have been, if humanity had an access to such
     power without any tools, doesn\u2019t that sound fascinating?"
-  voiceRecord: {fileID: 8300000, guid: 383e152626f7fb940b44c83f7c6d3f71, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 5c63db76ef619334aa344aea63d87e42, type: 3}
   duration: 0.05
   character: Dr Wilson
