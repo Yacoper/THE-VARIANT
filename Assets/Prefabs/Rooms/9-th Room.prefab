@@ -14106,7 +14106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5256186080248178235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.23, y: -2.572, z: -18.909}
+  m_LocalPosition: {x: 4.46, y: -2.572, z: -15.751}
   m_LocalScale: {x: 1.2828, y: 1.2828, z: 1.2828}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16737,7 +16737,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  m_SelectedVertices: 020000000f00000010000000030000000600000011000000070000000a000000130000000b0000000e00000012000000
+  m_SelectedVertices: 
 --- !u!114 &4262244640795217941
 MonoBehaviour:
   m_ObjectHideFlags: 0

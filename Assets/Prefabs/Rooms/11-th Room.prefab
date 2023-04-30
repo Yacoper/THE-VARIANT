@@ -8454,7 +8454,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  m_SelectedVertices: 070000000a00000013000000
+  m_SelectedVertices: 
 --- !u!114 &5283804797404931569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24989,7 +24989,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  m_SelectedVertices: 050000000800000015000000070000000a00000013000000
+  m_SelectedVertices: 
 --- !u!114 &4418445989452080372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28627,7 +28627,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  m_SelectedVertices: 050000000800000015000000070000000a00000013000000090000000b000000
+  m_SelectedVertices: 
 --- !u!114 &91246053632767639
 MonoBehaviour:
   m_ObjectHideFlags: 0
