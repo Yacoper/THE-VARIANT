@@ -71,6 +71,15 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleBuff"",
+                    ""type"": ""Button"",
+                    ""id"": ""b4aecd4c-e1a5-414c-a224-a414838d9cfa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -258,6 +267,17 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""PickUpDrop"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e3ff37b9-ff8c-4823-a037-42f1698126fc"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleBuff"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -817,6 +837,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_PickUpDrop = m_Gameplay.FindAction("PickUpDrop", throwIfNotFound: true);
+        m_Gameplay_ToggleBuff = m_Gameplay.FindAction("ToggleBuff", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -895,6 +916,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_PickUpDrop;
+    private readonly InputAction m_Gameplay_ToggleBuff;
     public struct GameplayActions
     {
         private @GameInput m_Wrapper;
@@ -904,6 +926,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @PickUpDrop => m_Wrapper.m_Gameplay_PickUpDrop;
+        public InputAction @ToggleBuff => m_Wrapper.m_Gameplay_ToggleBuff;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -928,6 +951,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @PickUpDrop.started += instance.OnPickUpDrop;
             @PickUpDrop.performed += instance.OnPickUpDrop;
             @PickUpDrop.canceled += instance.OnPickUpDrop;
+            @ToggleBuff.started += instance.OnToggleBuff;
+            @ToggleBuff.performed += instance.OnToggleBuff;
+            @ToggleBuff.canceled += instance.OnToggleBuff;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -947,6 +973,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @PickUpDrop.started -= instance.OnPickUpDrop;
             @PickUpDrop.performed -= instance.OnPickUpDrop;
             @PickUpDrop.canceled -= instance.OnPickUpDrop;
+            @ToggleBuff.started -= instance.OnToggleBuff;
+            @ToggleBuff.performed -= instance.OnToggleBuff;
+            @ToggleBuff.canceled -= instance.OnToggleBuff;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1107,6 +1136,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnPickUpDrop(InputAction.CallbackContext context);
+        void OnToggleBuff(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
