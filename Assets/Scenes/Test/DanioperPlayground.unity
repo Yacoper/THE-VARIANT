@@ -1482,7 +1482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78266a8e1879b45459b471eb3b8066d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 202913724}
 --- !u!1 &818300650
 GameObject:
   m_ObjectHideFlags: 0
@@ -2797,9 +2796,44 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7377575308980161343, guid: aa92613868c59de4fb3157406bbb56ee,
         type: 3}
+      propertyPath: soVoice.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377575308980161343, guid: aa92613868c59de4fb3157406bbb56ee,
+        type: 3}
       propertyPath: lines.Array.data[0]
       value: "chuj chuj nie dzia\u0142a chuj"
       objectReference: {fileID: 0}
+    - target: {fileID: 7377575308980161343, guid: aa92613868c59de4fb3157406bbb56ee,
+        type: 3}
+      propertyPath: soVoice.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: bd9be376274dce94fa865de1a7d56e66,
+        type: 2}
+    - target: {fileID: 7377575308980161343, guid: aa92613868c59de4fb3157406bbb56ee,
+        type: 3}
+      propertyPath: soVoice.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 46f8fb4b5057ff742becc3b91322dacc,
+        type: 2}
+    - target: {fileID: 7377575308980161343, guid: aa92613868c59de4fb3157406bbb56ee,
+        type: 3}
+      propertyPath: soVoice.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: ec9e6ea5f2ebd104a8fa2fc7d6cff5f5,
+        type: 2}
+    - target: {fileID: 7377575308980161343, guid: aa92613868c59de4fb3157406bbb56ee,
+        type: 3}
+      propertyPath: soVoice.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e22952f628fe5148bfb1c8a6ee79bae,
+        type: 2}
+    - target: {fileID: 7377575308980161343, guid: aa92613868c59de4fb3157406bbb56ee,
+        type: 3}
+      propertyPath: soVoice.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53023239214e1144ea78617eb1ae1e9d,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa92613868c59de4fb3157406bbb56ee, type: 3}
 --- !u!1001 &8741413208828731435
