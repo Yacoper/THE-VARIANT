@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,8 +16,11 @@ public class PlayerItemsInteraction : MonoBehaviour
     [SerializeField] private Transform pickUpTargetTransform;
 
     private PlayerMovement playerMovement;
+    private Cube cube;
+    private PickUpItem item;
+    
     private bool hasItemInHand;
-    private PickUpAbleItem pickUpAbleItem;
+    private BuffTypes currentBuff;
 
     private void Awake()
     {
@@ -35,7 +39,7 @@ public class PlayerItemsInteraction : MonoBehaviour
     
     private void HandlePickUpDropAction(InputAction.CallbackContext callbackContext)
     {
-        if(pickUpAbleItem == null)
+        if(!hasItemInHand)
             TryPickUp();
         else
             TryDrop();
@@ -45,36 +49,47 @@ public class PlayerItemsInteraction : MonoBehaviour
     {
         if (!Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit,
                 values.PickUpDistance, values.PickUpItemsLayerMask)) return;
-        
-        if (!raycastHit.transform.TryGetComponent(out pickUpAbleItem))
-            return;
+
 
         if (raycastHit.collider.CompareTag("Cube"))
         {
-            PickUpCube();
+            PickUpCube(raycastHit);
         }
         else
         {
-            PickUpItem();
+            PickUpItem(raycastHit);
         }
     }
 
-    private void PickUpCube()
+    private void PickUpCube(RaycastHit raycastHit)
     {
-        pickUpAbleItem.GetComponent<Cube>();
-        pickUpAbleItem.PickUp(pickUpTargetTransform);
+        cube = raycastHit.transform.GetComponent<Cube>();
+        cube.PickUp(pickUpTargetTransform);
+        currentBuff = cube.BuffType;
+        hasItemInHand = true;
     }
     
-    private void PickUpItem()
+    private void PickUpItem(RaycastHit raycastHit)
     {
-        pickUpAbleItem.GetComponent<PickUpItem>();
-        pickUpAbleItem.PickUp(pickUpTargetTransform);
+        item = raycastHit.transform.GetComponent<PickUpItem>();
+        item.PickUp(pickUpTargetTransform);
+        hasItemInHand = true;
     }
 
     private void TryDrop()
     {
-        pickUpAbleItem.Drop();
-        pickUpAbleItem = null;
+        if (cube == null)
+        {
+            item.Drop();
+            item = null;
+        }
+        else
+        {
+            cube.Drop();
+            cube = null;
+        }
+
+        hasItemInHand = false;
     }
 
     private void OnValidate()
