@@ -4,6 +4,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool HasBlueBuff 
+    { 
+        get => hasBlueBuff;
+        set => hasBlueBuff = value;
+    }
+    
+    public bool HasGreenBuff
+    { 
+        get => hasGreenBuff;
+        set => hasGreenBuff = value;
+    }
+    
     [Header("Input")]
     [SerializeField] private InputReader inputReader;
     [Header("Player Settings")]
@@ -13,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveDir;
     private Vector3 yVelocity;
     private bool isGrounded;
+
+    private bool hasBlueBuff;
+    private bool hasGreenBuff;
     
     private void OnEnable()
     {
@@ -45,13 +60,27 @@ public class PlayerMovement : MonoBehaviour
     {
         if(!isGrounded)
             return;
+        
+        float jumpForce = values.JumpForce;
 
-        yVelocity.y = values.JumpForce;
+        if (hasBlueBuff)
+        {
+            jumpForce *= 1.5f;
+        }
+
+        yVelocity.y = jumpForce;
     }
 
     private void MovePlayer()
     {
-        characterController.Move(transform.TransformDirection(moveDir) * (Time.deltaTime * values.PlayerSpeed));
+        float playerSpeed = values.PlayerSpeed;
+
+        if (hasGreenBuff)
+        {
+            playerSpeed *= 1.5f;
+        }
+        
+        characterController.Move(transform.TransformDirection(moveDir) * (Time.deltaTime * playerSpeed));
     }
 
     private void GetMoveDirection(Vector2 input)
@@ -71,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
         {
             yVelocity.y = -0.03f;
         }
-        
+
         if (!values.hasDrag)
         {
             yVelocity.y += values.GravityForce * Time.fixedDeltaTime;
