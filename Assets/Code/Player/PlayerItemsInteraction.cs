@@ -16,7 +16,7 @@ public class PlayerItemsInteraction : MonoBehaviour
 
     private PlayerMovement playerMovement;
     private bool hasItemInHand;
-    private PickUpItem pickUpItem;
+    private PickUpAbleItem pickUpItem;
 
     private void Awake()
     {
