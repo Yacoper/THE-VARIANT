@@ -6,7 +6,7 @@ using TMPro;
 
 public class VoiceTrigger : MonoBehaviour
 {
-    public SOVoice soVoice;
+    public SOVoice[] soVoice;
 
     public TextMeshProUGUI voiceLineUI;
     public TextMeshProUGUI characterNameUI;
@@ -25,18 +25,21 @@ public class VoiceTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (!isCurrentlyPlaying)
+        foreach (SOVoice voice in soVoice)
         {
-            if (other.tag == "Player")
+            if (!isCurrentlyPlaying)
+            {
+                if (other.CompareTag("Player"))
+                {
+                    gameObject.GetComponent<BoxCollider>().enabled = false;
+                    MonologSystem(voice);
+                }
+            }
+            else
             {
                 gameObject.GetComponent<BoxCollider>().enabled = false;
-                MonologSystem(soVoice);
+                soVoiceArray.Enqueue(voice);
             }
-        }
-        else
-        {
-             gameObject.GetComponent<BoxCollider>().enabled = false;
-             soVoiceArray.Enqueue(soVoice);
         }
     }
 
@@ -67,7 +70,7 @@ public class VoiceTrigger : MonoBehaviour
         foreach (char c in sov.voiceLineText.ToCharArray())
         {
             voiceLineUI.text += c;
-            yield return new WaitForSeconds(soVoice.duration);
+            yield return new WaitForSeconds(sov.duration);
         }
         yield return new WaitForSeconds(4);
         voiceLineUI.text = String.Empty;
