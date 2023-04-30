@@ -7598,17 +7598,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 2162
   m_IsSelectable: 1
-  m_SelectedFaces: 01000000
-  m_SelectedEdges:
-  - a: 4
-    b: 5
-  - a: 6
-    b: 4
-  - a: 5
-    b: 7
-  - a: 7
-    b: 6
-  m_SelectedVertices: 04000000050000000600000007000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &3249969826937762260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18368,10 +18360,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3038449303295586934}
     m_Modifications:
+    - target: {fileID: 486656251884687114, guid: dcd2f9dd2d78603459368722fc9b8dd4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2637783038837539019, guid: dcd2f9dd2d78603459368722fc9b8dd4,
         type: 3}
       propertyPath: m_Name
       value: Small_Door_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4878358808997908941, guid: dcd2f9dd2d78603459368722fc9b8dd4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6128587487130174554, guid: dcd2f9dd2d78603459368722fc9b8dd4,
         type: 3}
@@ -18427,6 +18429,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742001627365444068, guid: dcd2f9dd2d78603459368722fc9b8dd4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcd2f9dd2d78603459368722fc9b8dd4, type: 3}
