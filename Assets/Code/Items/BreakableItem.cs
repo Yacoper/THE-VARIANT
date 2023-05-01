@@ -3,14 +3,27 @@ using UnityEngine;
 
 public class BreakableItem : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    [SerializeField] private GameObject wholeObject;
+    [SerializeField] private GameObject brokenObject;
+
+    private BoxCollider boxCollider;
+
+    private void Awake()
     {
-        if (!other.transform.CompareTag("Player"))
+        boxCollider = GetComponent<BoxCollider>();
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.transform.CompareTag("MoveableObject"))
             return;
-        
-        if(!other.transform.GetComponent<PlayerRedCubePower>().IsBuffApplied)
+
+        if (collision.relativeVelocity.magnitude < 7f)
             return;
-        
-        Debug.LogError("Can destroy");
+
+        boxCollider.enabled = false;
+        wholeObject.SetActive(false);
+        brokenObject.SetActive(true);
+        Destroy(this);
     }
 }

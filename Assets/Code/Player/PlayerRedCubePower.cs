@@ -40,7 +40,7 @@ public class PlayerRedCubePower : MonoBehaviour
             return;
 
         Vector3 forceToApply = playerCameraTransform.forward * 1000f;
-        //Debug.LogError(playerCameraTransform.forward);
+        forceToApply.y = 100f;
         raycastHit.transform.GetComponent<MoveAbleObject>().MoveObject(forceToApply);
     }
 
