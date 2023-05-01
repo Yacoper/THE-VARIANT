@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ToggleBuff",
+                    "name": "UseCube",
                     "type": "Button",
                     "id": "b4aecd4c-e1a5-414c-a224-a414838d9cfa",
                     "expectedControlType": "Button",
@@ -255,7 +255,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ToggleBuff",
+                    "action": "UseCube",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

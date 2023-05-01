@@ -9,6 +9,11 @@ public class PlayerMovement : MonoBehaviour
         get => currentBuffAvailable;
         set => currentBuffAvailable = value;
     }
+
+    public bool IsBuffApplied
+    {
+        set => isBuffApplied = value;
+    }
     
     [Header("Input")]
     [SerializeField] private InputReader inputReader;
@@ -26,13 +31,13 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         inputReader.JumpAction += Jump;
-        inputReader.ToggleBuffAction += ToggleBuff;
+        inputReader.UseCube += ToggleBuff;
     }
 
     private void OnDisable()
     {
         inputReader.JumpAction -= Jump;
-        inputReader.JumpAction -= ToggleBuff;
+        inputReader.UseCube -= ToggleBuff;
     }
 
     private void Awake()
