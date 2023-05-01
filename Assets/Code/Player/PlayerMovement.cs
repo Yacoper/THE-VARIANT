@@ -4,16 +4,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool HasBlueBuff 
+    public BuffTypes CurrentBuffAvailable 
     { 
-        get => hasBlueBuff;
-        set => hasBlueBuff = value;
-    }
-    
-    public bool HasGreenBuff
-    { 
-        get => hasGreenBuff;
-        set => hasGreenBuff = value;
+        get => currentBuffAvailable;
+        set => currentBuffAvailable = value;
     }
     
     [Header("Input")]
@@ -26,17 +20,19 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 yVelocity;
     private bool isGrounded;
 
-    private bool hasBlueBuff;
-    private bool hasGreenBuff;
+    private BuffTypes currentBuffAvailable;
+    private bool isBuffApplied;
     
     private void OnEnable()
     {
         inputReader.JumpAction += Jump;
+        inputReader.ToggleBuffAction += ToggleBuff;
     }
 
     private void OnDisable()
     {
         inputReader.JumpAction -= Jump;
+        inputReader.JumpAction -= ToggleBuff;
     }
 
     private void Awake()
@@ -63,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         
         float jumpForce = values.JumpForce;
 
-        if (hasBlueBuff)
+        if (currentBuffAvailable == BuffTypes.BlueBuff && isBuffApplied)
         {
             jumpForce *= 1.5f;
         }
@@ -75,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float playerSpeed = values.PlayerSpeed;
 
-        if (hasGreenBuff)
+        if (currentBuffAvailable == BuffTypes.GreenBuff && isBuffApplied)
         {
             playerSpeed *= 1.5f;
         }
@@ -112,6 +108,14 @@ public class PlayerMovement : MonoBehaviour
 
         yVelocity.y = Math.Clamp(yVelocity.y,-50f, 50f);
         characterController.Move(yVelocity);
+    }
+
+    private void ToggleBuff(InputAction.CallbackContext callbackContext)
+    {
+        if(currentBuffAvailable == BuffTypes.None)
+            return;
+
+        isBuffApplied = !isBuffApplied;
     }
 
     private bool HasHitCeiling()
