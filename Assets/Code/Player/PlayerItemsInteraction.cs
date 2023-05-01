@@ -15,16 +15,15 @@ public class PlayerItemsInteraction : MonoBehaviour
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private Transform pickUpTargetTransform;
 
-    private PlayerMovement playerMovement;
+    private PlayerBuffController playerBuffController;
     private Cube cube;
     private PickUpItem item;
     
     private bool hasItemInHand;
-    private BuffTypes currentBuff;
 
     private void Awake()
     {
-        playerMovement = GetComponent<PlayerMovement>();
+        playerBuffController = GetComponent<PlayerBuffController>();
     }
 
     private void OnEnable()
@@ -65,8 +64,7 @@ public class PlayerItemsInteraction : MonoBehaviour
     {
         cube = raycastHit.transform.GetComponent<Cube>();
         cube.PickUp(pickUpTargetTransform);
-        currentBuff = cube.BuffType;
-        ApplyBuff();
+        playerBuffController.ApplyBuff(cube.BuffType);
         hasItemInHand = true;
     }
     
@@ -86,50 +84,12 @@ public class PlayerItemsInteraction : MonoBehaviour
         }
         else
         {
-            ClearBuff();
+            playerBuffController.ClearBuff(cube.BuffType);
             cube.Drop();
             cube = null;
         }
 
         hasItemInHand = false;
-    }
-
-    private void ApplyBuff()
-    {
-        switch (currentBuff)
-        {
-            case BuffTypes.None:
-                break;
-            case BuffTypes.RedBuff:
-                break;
-            case BuffTypes.GreenBuff:
-                playerMovement.HasGreenBuff = true;
-                break;
-            case BuffTypes.BlueBuff:
-                playerMovement.HasBlueBuff = true;
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-    }
-
-    private void ClearBuff()
-    {
-        switch (currentBuff)
-        {
-            case BuffTypes.RedBuff:
-                break;
-            case BuffTypes.GreenBuff:
-                playerMovement.HasGreenBuff = false;
-                break;
-            case BuffTypes.BlueBuff:
-                playerMovement.HasBlueBuff = false;
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
-
-        currentBuff = BuffTypes.None;
     }
 
     private void OnValidate()

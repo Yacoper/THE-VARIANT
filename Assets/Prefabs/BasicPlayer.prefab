@@ -311,6 +311,7 @@ GameObject:
   - component: {fileID: 3357065867047422217}
   - component: {fileID: 1867536418}
   - component: {fileID: 2394663039755632889}
+  - component: {fileID: 6114290967144574405}
   m_Layer: 0
   m_Name: BasicPlayer
   m_TagString: Player
@@ -450,6 +451,18 @@ MonoBehaviour:
   values: {fileID: 11400000, guid: 0259035d550d3ee47bdd8d770f8e509d, type: 2}
   playerCameraTransform: {fileID: 4111454224826581585}
   pickUpTargetTransform: {fileID: 94505452186844013}
+--- !u!114 &6114290967144574405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111454226316908195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1692a328e3ea9624b8f6b772ec01b7c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8656058035822904236
 GameObject:
   m_ObjectHideFlags: 0
