@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBuffController : MonoBehaviour
@@ -12,7 +10,7 @@ public class PlayerBuffController : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
     }
     
-    public void ApplyBuff(BuffTypes currentBuff)
+    public void SetBuffAvailable(BuffTypes currentBuff)
     {
         switch (currentBuff)
         {
@@ -21,10 +19,10 @@ public class PlayerBuffController : MonoBehaviour
             case BuffTypes.RedBuff:
                 break;
             case BuffTypes.GreenBuff:
-                playerMovement.HasGreenBuff = true;
+                playerMovement.CurrentBuffAvailable = currentBuff;
                 break;
             case BuffTypes.BlueBuff:
-                playerMovement.HasBlueBuff = true;
+                playerMovement.CurrentBuffAvailable = currentBuff;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -38,10 +36,10 @@ public class PlayerBuffController : MonoBehaviour
             case BuffTypes.RedBuff:
                 break;
             case BuffTypes.GreenBuff:
-                playerMovement.HasGreenBuff = false;
+                playerMovement.CurrentBuffAvailable = BuffTypes.None;
                 break;
             case BuffTypes.BlueBuff:
-                playerMovement.HasBlueBuff = false;
+                playerMovement.CurrentBuffAvailable = BuffTypes.None;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
