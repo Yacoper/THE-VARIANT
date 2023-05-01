@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 public class PlayerRedCubePower : MonoBehaviour
 {
     [SerializeField] private InputReader inputReader;
+    [SerializeField] private Transform playerCameraTransform;
+
+    [SerializeField] private LayerMask moveableObjectLayerMask;
     
     public BuffTypes CurrentBuffAvailable 
     { 
@@ -22,24 +25,28 @@ public class PlayerRedCubePower : MonoBehaviour
     
     private void OnEnable()
     {
-        inputReader.UseCube += ToggleBuff;
+        inputReader.UseCube += UseRedCube;
     }
 
     private void OnDisable()
     {
-        inputReader.UseCube -= ToggleBuff;
+        inputReader.UseCube -= UseRedCube;
     }
     
-    private void ToggleBuff(InputAction.CallbackContext callbackContext)
+    private void UseRedCube(InputAction.CallbackContext callbackContext)
     {
-        if(currentBuffAvailable == BuffTypes.None)
+        if (!Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit,
+                5f, moveableObjectLayerMask))
             return;
 
-        isBuffApplied = !isBuffApplied;
+        Vector3 forceToApply = playerCameraTransform.forward * 1000f;
+        //Debug.LogError(playerCameraTransform.forward);
+        raycastHit.transform.GetComponent<MoveAbleObject>().MoveObject(forceToApply);
     }
 
     private void OnValidate()
     {
         ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
+        ValidateUtilities.NullCheckVariable(this, nameof(playerCameraTransform), playerCameraTransform, true);
     }
 }
