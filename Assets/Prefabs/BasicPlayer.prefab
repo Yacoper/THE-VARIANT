@@ -480,7 +480,7 @@ MonoBehaviour:
   playerCameraTransform: {fileID: 4111454224826581585}
   moveableObjectLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!1 &8656058035822904236
 GameObject:
   m_ObjectHideFlags: 0
