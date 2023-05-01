@@ -73,7 +73,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""ToggleBuff"",
+                    ""name"": ""UseCube"",
                     ""type"": ""Button"",
                     ""id"": ""b4aecd4c-e1a5-414c-a224-a414838d9cfa"",
                     ""expectedControlType"": ""Button"",
@@ -277,7 +277,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ToggleBuff"",
+                    ""action"": ""UseCube"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -837,7 +837,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_PickUpDrop = m_Gameplay.FindAction("PickUpDrop", throwIfNotFound: true);
-        m_Gameplay_ToggleBuff = m_Gameplay.FindAction("ToggleBuff", throwIfNotFound: true);
+        m_Gameplay_UseCube = m_Gameplay.FindAction("UseCube", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -916,7 +916,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Jump;
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_PickUpDrop;
-    private readonly InputAction m_Gameplay_ToggleBuff;
+    private readonly InputAction m_Gameplay_UseCube;
     public struct GameplayActions
     {
         private @GameInput m_Wrapper;
@@ -926,7 +926,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @PickUpDrop => m_Wrapper.m_Gameplay_PickUpDrop;
-        public InputAction @ToggleBuff => m_Wrapper.m_Gameplay_ToggleBuff;
+        public InputAction @UseCube => m_Wrapper.m_Gameplay_UseCube;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -951,9 +951,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @PickUpDrop.started += instance.OnPickUpDrop;
             @PickUpDrop.performed += instance.OnPickUpDrop;
             @PickUpDrop.canceled += instance.OnPickUpDrop;
-            @ToggleBuff.started += instance.OnToggleBuff;
-            @ToggleBuff.performed += instance.OnToggleBuff;
-            @ToggleBuff.canceled += instance.OnToggleBuff;
+            @UseCube.started += instance.OnUseCube;
+            @UseCube.performed += instance.OnUseCube;
+            @UseCube.canceled += instance.OnUseCube;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -973,9 +973,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @PickUpDrop.started -= instance.OnPickUpDrop;
             @PickUpDrop.performed -= instance.OnPickUpDrop;
             @PickUpDrop.canceled -= instance.OnPickUpDrop;
-            @ToggleBuff.started -= instance.OnToggleBuff;
-            @ToggleBuff.performed -= instance.OnToggleBuff;
-            @ToggleBuff.canceled -= instance.OnToggleBuff;
+            @UseCube.started -= instance.OnUseCube;
+            @UseCube.performed -= instance.OnUseCube;
+            @UseCube.canceled -= instance.OnUseCube;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1136,7 +1136,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         void OnJump(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnPickUpDrop(InputAction.CallbackContext context);
-        void OnToggleBuff(InputAction.CallbackContext context);
+        void OnUseCube(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
