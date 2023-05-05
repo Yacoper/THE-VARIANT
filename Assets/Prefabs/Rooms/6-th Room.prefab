@@ -30663,7 +30663,7 @@ MonoBehaviour:
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
-  m_SelectedVertices: 0a000000
+  m_SelectedVertices: 
 --- !u!114 &3995504087080450329
 MonoBehaviour:
   m_ObjectHideFlags: 0
