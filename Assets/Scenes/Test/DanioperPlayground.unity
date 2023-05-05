@@ -1044,7 +1044,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-463590
+  m_Name: pb_Mesh-1394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2395,7 +2395,7 @@ PrefabInstance:
     - target: {fileID: 682186347947806042, guid: 3a8a08b3c4058dc479c9e10471b7b298,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 755
+      value: 767
       objectReference: {fileID: 0}
     - target: {fileID: 682186347947806043, guid: 3a8a08b3c4058dc479c9e10471b7b298,
         type: 3}
@@ -2476,6 +2476,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397337074991291008, guid: 3a8a08b3c4058dc479c9e10471b7b298,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397337074991291008, guid: 3a8a08b3c4058dc479c9e10471b7b298,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397337074991291008, guid: 3a8a08b3c4058dc479c9e10471b7b298,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397337074991291011, guid: 3a8a08b3c4058dc479c9e10471b7b298,
+        type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397337074991291011, guid: 3a8a08b3c4058dc479c9e10471b7b298,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397337074991291011, guid: 3a8a08b3c4058dc479c9e10471b7b298,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.minScalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8a08b3c4058dc479c9e10471b7b298, type: 3}
@@ -3976,7 +4006,7 @@ PrefabInstance:
     - target: {fileID: 6015937737382532710, guid: 4efae155934ac3742a79efd9a6dce254,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7286692056229504878, guid: 4efae155934ac3742a79efd9a6dce254,
         type: 3}
