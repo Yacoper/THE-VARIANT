@@ -3,17 +3,7 @@ guid: 97d374f2d4858e048b95129435c4db6a
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Car chrome.002
-    second: {fileID: 2100000, guid: eab8e605027158141a2c83c22c9352cf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 4ef4b81fb72dc2b4992269773ba47787, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
