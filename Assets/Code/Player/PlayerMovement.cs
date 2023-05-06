@@ -2,13 +2,9 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
 {
-    public BuffTypes CurrentBuffAvailable 
-    { 
-        get => currentBuffAvailable;
-        set => currentBuffAvailable = value;
-    }
+    public BuffTypes CurrentBuffAvailable { get; set; }
 
     public bool IsBuffApplied
     {
@@ -25,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 yVelocity;
     private bool isGrounded;
 
-    private BuffTypes currentBuffAvailable;
     private bool isBuffApplied;
     
     private void OnEnable()
@@ -64,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         
         float jumpForce = values.JumpForce;
 
-        if (currentBuffAvailable == BuffTypes.BlueBuff && isBuffApplied)
+        if (CurrentBuffAvailable == BuffTypes.BlueBuff && isBuffApplied)
         {
             jumpForce *= 1.5f;
         }
@@ -76,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float playerSpeed = values.PlayerSpeed;
 
-        if (currentBuffAvailable == BuffTypes.GreenBuff && isBuffApplied)
+        if (CurrentBuffAvailable == BuffTypes.GreenBuff && isBuffApplied)
         {
             playerSpeed *= 1.5f;
         }
@@ -117,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void ToggleBuff(InputAction.CallbackContext callbackContext)
     {
-        if(currentBuffAvailable == BuffTypes.None)
+        if(CurrentBuffAvailable == BuffTypes.None)
             return;
 
         isBuffApplied = !isBuffApplied;
@@ -136,5 +131,10 @@ public class PlayerMovement : MonoBehaviour
     {
         ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
         ValidateUtilities.NullCheckVariable(this, nameof(values), values, true);
+    }
+
+    public void ApplyBuffFromCube(BuffTypes buffType, CubeDataSO cubeData)
+    {
+        throw new NotImplementedException();
     }
 }
