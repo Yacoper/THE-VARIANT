@@ -9,7 +9,9 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
 
     private RedCubeDataSO currentCubeData;
     private BuffTypes currentBuffAvailable;
+    
     private bool isBuffApplied;
+    private bool isOnCooldown;
 
     private void OnEnable()
     {
@@ -34,9 +36,12 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
         currentCubeData = null;
         isBuffApplied = false;
     }
-    
+
     private void UseRedCube(InputAction.CallbackContext callbackContext)
     {
+        if(!isOnCooldown)
+            return;
+        
         if(!isBuffApplied)
             return;
         
@@ -50,6 +55,15 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
         Vector3 forceToApply = playerCameraTransform.forward * currentCubeData.ForwardForce;
         forceToApply.y = currentCubeData.UpwardForce;
         raycastHit.transform.GetComponent<MoveAbleObject>().MoveObject(forceToApply);
+        isOnCooldown = true;
+
+        StartCoroutine(Cooldown(currentCubeData.Cooldown));
+    }
+    
+    private IEnumerator Cooldown(float cooldownTime)
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        isOnCooldown = false;
     }
     
     private void OnValidate()

@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe68b3cb8e8072e49a617d0fa652f252, type: 3}
   m_Name: RedCubeData
   m_EditorClassIdentifier: 
+  <Cooldown>k__BackingField: 10
   <MoveableObjectLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 128
+  <ForwardForce>k__BackingField: 1000
+  <UpwardForce>k__BackingField: 100
+  <MaxDistancePush>k__BackingField: 5
