@@ -1,28 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerRedCubePower : MonoBehaviour
+public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
 {
+    public CubeDataSO CurrentCubeData { get; set; }
+
     [SerializeField] private InputReader inputReader;
     [SerializeField] private Transform playerCameraTransform;
 
     [SerializeField] private LayerMask moveableObjectLayerMask;
-    
-    public BuffTypes CurrentBuffAvailable 
-    { 
-        get => currentBuffAvailable;
-        set => currentBuffAvailable = value;
-    }
 
-    public bool IsBuffApplied
-    {
-        get => isBuffApplied;
-        set => isBuffApplied = value;
-    }
-    
-    private BuffTypes currentBuffAvailable;
-    private bool isBuffApplied;
-    
+    public BuffTypes CurrentBuffAvailable { get; set; }
+
+    public bool IsBuffApplied { get; set; }
+
     private void OnEnable()
     {
         inputReader.UseCube += UseRedCube;
@@ -48,5 +39,10 @@ public class PlayerRedCubePower : MonoBehaviour
     {
         ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
         ValidateUtilities.NullCheckVariable(this, nameof(playerCameraTransform), playerCameraTransform, true);
+    }
+
+    public void ApplyBuffFromCube(BuffTypes buffType, CubeDataSO cubeData)
+    {
+        throw new System.NotImplementedException();
     }
 }
