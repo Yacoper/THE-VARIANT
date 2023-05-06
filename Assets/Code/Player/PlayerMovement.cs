@@ -4,13 +4,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
 {
-    public BuffTypes CurrentBuffAvailable { get; set; }
-
-    public bool IsBuffApplied
-    {
-        set => isBuffApplied = value;
-    }
-    
     [Header("Input")]
     [SerializeField] private InputReader inputReader;
     [Header("Player Settings")]
@@ -19,10 +12,14 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
     private CharacterController characterController;
     private Vector3 moveDir;
     private Vector3 yVelocity;
-    private bool isGrounded;
-
-    private bool isBuffApplied;
     
+    private bool isGrounded;
+    private bool isBuffApplied;
+
+    private BuffTypes currentBuffAvailable;
+    private BlueCubeDataSO blueCubeData;
+    private GreenCubeDataSO greenCubeData;
+
     private void OnEnable()
     {
         inputReader.JumpAction += Jump;
@@ -51,6 +48,24 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
         MovePlayer();
         ApplyGravity();
     }
+    
+    public void ApplyBuffFromCube(BuffTypes buffType, CubeDataSO cubeData)
+    {
+        currentBuffAvailable = buffType;
+        
+        if(buffType == BuffTypes.GreenBuff)
+            greenCubeData = cubeData as GreenCubeDataSO;
+        else
+            blueCubeData = cubeData as BlueCubeDataSO;
+    }
+
+    public void ClearBuffFromCube()
+    {
+        currentBuffAvailable = BuffTypes.None;
+        blueCubeData = null;
+        greenCubeData = null;
+        isBuffApplied = false;
+    }
 
     private void Jump(InputAction.CallbackContext callbackContext)
     {
@@ -59,9 +74,9 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
         
         float jumpForce = values.JumpForce;
 
-        if (CurrentBuffAvailable == BuffTypes.BlueBuff && isBuffApplied)
+        if (currentBuffAvailable == BuffTypes.BlueBuff && isBuffApplied)
         {
-            jumpForce *= 1.5f;
+            jumpForce *= blueCubeData.JumpForceMultiplier;
         }
 
         yVelocity.y = jumpForce;
@@ -71,9 +86,9 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
     {
         float playerSpeed = values.PlayerSpeed;
 
-        if (CurrentBuffAvailable == BuffTypes.GreenBuff && isBuffApplied)
+        if (currentBuffAvailable == BuffTypes.GreenBuff && isBuffApplied)
         {
-            playerSpeed *= 1.5f;
+            playerSpeed *= greenCubeData.PlayerSpeedMultiplier;
         }
         
         characterController.Move(transform.TransformDirection(moveDir) * (Time.deltaTime * playerSpeed));
@@ -112,7 +127,7 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
 
     private void ToggleBuff(InputAction.CallbackContext callbackContext)
     {
-        if(CurrentBuffAvailable == BuffTypes.None)
+        if(currentBuffAvailable == BuffTypes.None)
             return;
 
         isBuffApplied = !isBuffApplied;
@@ -131,15 +146,5 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
     {
         ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
         ValidateUtilities.NullCheckVariable(this, nameof(values), values, true);
-    }
-
-    public void ApplyBuffFromCube(BuffTypes buffType, CubeDataSO cubeData)
-    {
-        throw new NotImplementedException();
-    }
-
-    public void ClearBuffFromCube()
-    {
-        throw new NotImplementedException();
     }
 }
