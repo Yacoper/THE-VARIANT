@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: Power of the cube reduced down to 2%.
   voiceRecord: {fileID: 8300000, guid: dd350151f9a5b5546b546a32b478324b, type: 3}
-  duration: 0.055
+  duration: 0.1
   character: Alert
