@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "ScriptableObjects/Cubes/CubeData", fileName = "Blue Cube Data")]
+[CreateAssetMenu(menuName = "ScriptableObjects/Cubes/BlueCubeData", fileName = "BlueCubeData")]
 public class BlueCubeDataSO : CubeDataSO
 {
     
