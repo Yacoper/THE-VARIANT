@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 061d93f52d931d0489afec4b225739c6, type: 3}
   m_Name: GreenCubeData
   m_EditorClassIdentifier: 
+  <Cooldown>k__BackingField: 10
+  <BuffDuration>k__BackingField: 5
+  <PlayerSpeedMultiplier>k__BackingField: 2
