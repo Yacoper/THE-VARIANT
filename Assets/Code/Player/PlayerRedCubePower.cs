@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,8 +6,6 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
 {
     [SerializeField] private InputReader inputReader;
     [SerializeField] private Transform playerCameraTransform;
-
-    [SerializeField] private LayerMask moveableObjectLayerMask;
 
     private RedCubeDataSO currentCubeData;
     private BuffTypes currentBuffAvailable;
@@ -41,15 +40,18 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
         if(!isBuffApplied)
             return;
         
+        if(currentBuffAvailable != BuffTypes.RedBuff)
+            return;
+        
         if (!Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit,
-                5f, currentCubeData.MoveableObjectLayerMask))
+                currentCubeData.MaxDistancePush, currentCubeData.MoveableObjectLayerMask))
             return;
 
-        Vector3 forceToApply = playerCameraTransform.forward * 1000f;
-        forceToApply.y = 100f;
+        Vector3 forceToApply = playerCameraTransform.forward * currentCubeData.ForwardForce;
+        forceToApply.y = currentCubeData.UpwardForce;
         raycastHit.transform.GetComponent<MoveAbleObject>().MoveObject(forceToApply);
     }
-
+    
     private void OnValidate()
     {
         ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
