@@ -19,7 +19,7 @@ public class PlayerBuffController : MonoBehaviour
             case BuffTypes.None:
                 break;
             case BuffTypes.RedBuff:
-                playerRedCubePower.CurrentBuffAvailable = currentBuff;
+                playerRedCubePower.ApplyBuffFromCube(currentBuff, cubeData);
                 break;
             case BuffTypes.GreenBuff:
                 playerMovement.CurrentBuffAvailable = currentBuff;
@@ -37,8 +37,7 @@ public class PlayerBuffController : MonoBehaviour
         switch (currentBuff)
         {
             case BuffTypes.RedBuff:
-                playerRedCubePower.CurrentBuffAvailable = BuffTypes.None;
-                playerMovement.IsBuffApplied = false;
+                playerRedCubePower.ClearBuffFromCube();
                 break;
             case BuffTypes.GreenBuff:
                 playerMovement.CurrentBuffAvailable = BuffTypes.None;
