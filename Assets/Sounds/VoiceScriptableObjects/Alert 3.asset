@@ -15,5 +15,5 @@ MonoBehaviour:
   voiceLineText: Object has been stabilized. Magnetic field- expected. Influence
     on alien objects- strong.
   voiceRecord: {fileID: 8300000, guid: 0a25b7ab20487b04d9de95248315f280, type: 3}
-  duration: 0.055
+  duration: 0.1
   character: Alert

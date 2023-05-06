@@ -15,5 +15,5 @@ MonoBehaviour:
   voiceLineText: 'Compatibility level: stable in 78%. Nerve structure has been fractured.
     Level of damage: minor.'
   voiceRecord: {fileID: 8300000, guid: 791bb03bdafed8b478a7a74d7f7a6d33, type: 3}
-  duration: 0.055
+  duration: 0.1
   character: Alert

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eeade4c08239474990e31d61eba3b9d, type: 3}
   m_Name: BA1A 1
   m_EditorClassIdentifier: 
-  voiceLineText: "Race is going to start in 3\u2026 2\u2026 1\u2026 Go!"
+  voiceLineText: "If you can hear me\u2026 Immediately run forward, everything is
+    a lie, if you want to live just run FUCKING forward!!!"
   voiceRecord: {fileID: 8300000, guid: 3b4861886d9bf4c4897d3a1f7bb1ae05, type: 3}
   duration: 0.055
   character: Alert

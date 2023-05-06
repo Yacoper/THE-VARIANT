@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: "Race is going to start in 3\u2026 2\u2026 1\u2026 Go!"
   voiceRecord: {fileID: 8300000, guid: dd350151f9a5b5546b546a32b478324b, type: 3}
-  duration: 0.055
+  duration: 0.1
   character: Alert
