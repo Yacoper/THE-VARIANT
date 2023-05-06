@@ -12,7 +12,7 @@ public class PlayerBuffController : MonoBehaviour
         playerRedCubePower = GetComponent<PlayerRedCubePower>();
     }
     
-    public void SetBuffAvailable(BuffTypes currentBuff)
+    public void SetBuffAvailable(BuffTypes currentBuff, CubeDataSO cubeData)
     {
         switch (currentBuff)
         {

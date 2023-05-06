@@ -64,7 +64,7 @@ public class PlayerItemsInteraction : MonoBehaviour
     {
         cube = raycastHit.transform.GetComponent<Cube>();
         cube.PickUp(pickUpTargetTransform);
-        playerBuffController.SetBuffAvailable(cube.BuffType);
+        playerBuffController.SetBuffAvailable(cube.BuffType, cube.CubeData);
         hasItemInHand = true;
     }
     
