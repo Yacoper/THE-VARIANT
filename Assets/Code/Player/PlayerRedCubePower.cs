@@ -3,16 +3,14 @@ using UnityEngine.InputSystem;
 
 public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
 {
-    public CubeDataSO CurrentCubeData { get; set; }
-
     [SerializeField] private InputReader inputReader;
     [SerializeField] private Transform playerCameraTransform;
 
     [SerializeField] private LayerMask moveableObjectLayerMask;
 
-    public BuffTypes CurrentBuffAvailable { get; set; }
-
-    public bool IsBuffApplied { get; set; }
+    private RedCubeDataSO currentCubeData;
+    private BuffTypes currentBuffAvailable;
+    private bool isBuffApplied;
 
     private void OnEnable()
     {
@@ -24,10 +22,27 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
         inputReader.UseCube -= UseRedCube;
     }
     
+    public void ApplyBuffFromCube(BuffTypes buffType, CubeDataSO cubeData)
+    {
+        currentBuffAvailable = buffType;
+        currentCubeData = cubeData as RedCubeDataSO;
+        isBuffApplied = true;
+    }
+
+    public void ClearBuffFromCube()
+    {
+        currentBuffAvailable = BuffTypes.None;
+        currentCubeData = null;
+        isBuffApplied = false;
+    }
+    
     private void UseRedCube(InputAction.CallbackContext callbackContext)
     {
+        if(!isBuffApplied)
+            return;
+        
         if (!Physics.Raycast(playerCameraTransform.position, playerCameraTransform.forward, out RaycastHit raycastHit,
-                5f, moveableObjectLayerMask))
+                5f, currentCubeData.MoveableObjectLayerMask))
             return;
 
         Vector3 forceToApply = playerCameraTransform.forward * 1000f;
@@ -39,10 +54,5 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
     {
         ValidateUtilities.NullCheckVariable(this, nameof(inputReader), inputReader, true);
         ValidateUtilities.NullCheckVariable(this, nameof(playerCameraTransform), playerCameraTransform, true);
-    }
-
-    public void ApplyBuffFromCube(BuffTypes buffType, CubeDataSO cubeData)
-    {
-        throw new System.NotImplementedException();
     }
 }
