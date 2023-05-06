@@ -137,4 +137,9 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
     {
         throw new NotImplementedException();
     }
+
+    public void ClearBuffFromCube()
+    {
+        throw new NotImplementedException();
+    }
 }
