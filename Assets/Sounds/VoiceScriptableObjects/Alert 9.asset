@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: Subject ready for disintegration! Subject ready for disintegration!
   voiceRecord: {fileID: 8300000, guid: 287d74f8b4b9a214090d30206e9f88dd, type: 3}
-  duration: 0.055
+  duration: 0.1
   character: Alert

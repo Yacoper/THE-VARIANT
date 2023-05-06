@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceLineText: Status of test subject BA70R- awake, ready for the experiment.
   voiceRecord: {fileID: 8300000, guid: aea265899552b194eb36fa0c8ebbb572, type: 3}
-  duration: 0.055
+  duration: 0.1
   character: Alert

@@ -15,5 +15,5 @@ MonoBehaviour:
   voiceLineText: 'P70 prosthesis attachted. Compatibility level: stable in 80%. Special
     functions- accessible. Access to controling module- granted.'
   voiceRecord: {fileID: 8300000, guid: 8445345bf29be8048bbf997c7e3474ae, type: 3}
-  duration: 0.055
+  duration: 0.1
   character: Alert
