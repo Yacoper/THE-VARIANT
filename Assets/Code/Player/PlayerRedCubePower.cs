@@ -39,7 +39,7 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
 
     private void UseRedCube(InputAction.CallbackContext callbackContext)
     {
-        if(!isOnCooldown)
+        if(isOnCooldown)
             return;
         
         if(!isBuffApplied)
