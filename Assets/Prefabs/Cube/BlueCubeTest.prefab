@@ -375,3 +375,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffType: 3
+  cubeData: {fileID: 11400000, guid: 6af6aba5e8f71e14e80f9b71edd7fbc0, type: 2}

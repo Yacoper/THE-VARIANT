@@ -12,20 +12,20 @@ public class PlayerBuffController : MonoBehaviour
         playerRedCubePower = GetComponent<PlayerRedCubePower>();
     }
     
-    public void SetBuffAvailable(BuffTypes currentBuff)
+    public void SetBuffAvailable(BuffTypes currentBuff, CubeDataSO cubeData)
     {
         switch (currentBuff)
         {
             case BuffTypes.None:
                 break;
             case BuffTypes.RedBuff:
-                playerRedCubePower.CurrentBuffAvailable = currentBuff;
+                playerRedCubePower.ApplyBuffFromCube(currentBuff, cubeData);
                 break;
             case BuffTypes.GreenBuff:
-                playerMovement.CurrentBuffAvailable = currentBuff;
+                playerMovement.ApplyBuffFromCube(currentBuff, cubeData);
                 break;
             case BuffTypes.BlueBuff:
-                playerMovement.CurrentBuffAvailable = currentBuff;
+                playerMovement.ApplyBuffFromCube(currentBuff, cubeData);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -37,16 +37,13 @@ public class PlayerBuffController : MonoBehaviour
         switch (currentBuff)
         {
             case BuffTypes.RedBuff:
-                playerRedCubePower.CurrentBuffAvailable = BuffTypes.None;
-                playerMovement.IsBuffApplied = false;
+                playerRedCubePower.ClearBuffFromCube();
                 break;
             case BuffTypes.GreenBuff:
-                playerMovement.CurrentBuffAvailable = BuffTypes.None;
-                playerMovement.IsBuffApplied = false;
+                playerMovement.ClearBuffFromCube();
                 break;
             case BuffTypes.BlueBuff:
-                playerMovement.CurrentBuffAvailable = BuffTypes.None;
-                playerMovement.IsBuffApplied = false;
+                playerMovement.ClearBuffFromCube();
                 break;
             default:
                 throw new ArgumentOutOfRangeException();

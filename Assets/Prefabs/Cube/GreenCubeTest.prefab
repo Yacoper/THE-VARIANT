@@ -376,7 +376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buffType: 2
---- !u!1001 &1546538608341068939
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
