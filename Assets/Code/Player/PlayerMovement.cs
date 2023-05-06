@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,11 +16,14 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
     
     private bool isGrounded;
     private bool isBuffApplied;
+    
+    private bool isBlueOnCooldown;
+    private bool isGreenOnCooldown;
 
     private BuffTypes currentBuffAvailable;
     private BlueCubeDataSO blueCubeData;
     private GreenCubeDataSO greenCubeData;
-
+    
     private void OnEnable()
     {
         inputReader.JumpAction += Jump;
@@ -130,7 +134,40 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
         if(currentBuffAvailable == BuffTypes.None)
             return;
 
-        isBuffApplied = !isBuffApplied;
+        if (isBuffApplied)
+        {
+            isBuffApplied = false;
+            if (currentBuffAvailable == BuffTypes.BlueBuff)
+            {
+                isBlueOnCooldown = true;
+                StartCoroutine(BlueCooldown(blueCubeData.Cooldown));
+            }
+            else
+            {
+                isGreenOnCooldown = true;
+                StartCoroutine(GreenCooldown(greenCubeData.Cooldown));
+            }
+        }
+        
+        if(currentBuffAvailable == BuffTypes.BlueBuff && isBlueOnCooldown)
+            return;
+        
+        if(currentBuffAvailable == BuffTypes.GreenBuff && isGreenOnCooldown)
+            return;
+
+        isBuffApplied = true;
+    }
+
+    private IEnumerator BlueCooldown(float cooldownTime)
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        isBlueOnCooldown = false;
+    }
+
+    private IEnumerator GreenCooldown(float cooldownTime)
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        isGreenOnCooldown = false;
     }
 
     private bool HasHitCeiling()
