@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee06929508979b7488019f41dfe54921, type: 3}
   m_Name: BlueCubeData
   m_EditorClassIdentifier: 
+  <Cooldown>k__BackingField: 10
+  <BuffDuration>k__BackingField: 5
+  <JumpForceMultiplier>k__BackingField: 2
