@@ -3,27 +3,7 @@ guid: 48f7b99b57af6334a97ac0929eb97d6d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cables
-    second: {fileID: 2100000, guid: c1284192d18f36e4da991a0e0978ad02, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Circles
-    second: {fileID: 2100000, guid: d7ce74dd9b96d3f4887c88fd9033c2bc, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Details
-    second: {fileID: 2100000, guid: 9b2c3330bf6e5ba428fa3548f5435cf2, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 2f7fc4769417a6444bfcbc61fc27cf16, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
