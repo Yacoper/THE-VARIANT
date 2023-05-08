@@ -12,6 +12,12 @@ public class CrackShield : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
+        if (!collision.transform.CompareTag("MoveableObject"))
+            return;
+
+        if (collision.relativeVelocity.magnitude < 7f)
+            return;
+        
         StartCoroutine(Crack());
     }
 
