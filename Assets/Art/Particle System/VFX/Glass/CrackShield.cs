@@ -1,20 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph;
 using UnityEngine;
 
 public class CrackShield : MonoBehaviour
 {
     private Material shieldMat;
-    public GameObject glassBrake;
+    [SerializeField] private GameObject glassBrake;
     void Start()
     {
         shieldMat = GetComponent<MeshRenderer>().sharedMaterial;
     }
+    
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Dupa");
-         StartCoroutine(Crack());
+        StartCoroutine(Crack());
     }
 
     IEnumerator Crack()
