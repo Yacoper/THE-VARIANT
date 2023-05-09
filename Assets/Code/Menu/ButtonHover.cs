@@ -10,13 +10,6 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, ISelectHandler, 
     private Color originalColor;
     [SerializeField]
     private Color hoverColor;
-    [SerializeField]
-    private bool selected;
-
-    public void Awake()
-    {
-        if(selected) GetComponent<Button>().Select();
-    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
