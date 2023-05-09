@@ -463,6 +463,12 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 272606619}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &342587851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5415707673785644470, guid: 4dd1e2ce5d7c96c4cacb4099f9a17ed3,
+    type: 3}
+  m_PrefabInstance: {fileID: 272606619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &624198845
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +841,7 @@ MonoBehaviour:
     type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018,
     type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!114 &1139388583
@@ -850,8 +856,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
+  m_FirstSelected: {fileID: 342587851}
+  m_sendNavigationEvents: 0
   m_DragThreshold: 10
 --- !u!4 &1139388584
 Transform:
@@ -963,7 +969,7 @@ PrefabInstance:
     - target: {fileID: 2728779119985645837, guid: 4dd1e2ce5d7c96c4cacb4099f9a17ed3,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -172
+      value: -186
       objectReference: {fileID: 0}
     - target: {fileID: 2728779119985645837, guid: 4dd1e2ce5d7c96c4cacb4099f9a17ed3,
         type: 3}
