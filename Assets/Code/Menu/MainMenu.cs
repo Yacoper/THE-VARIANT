@@ -28,7 +28,7 @@ public class MainMenu : MonoBehaviour
                 Options.SetActive(false);
                 break;
             case 1:
-                foreach(GameObject option in AdvancedOptions)
+                foreach (GameObject option in AdvancedOptions)
                     option.SetActive(false);
                 break;
         }
@@ -38,6 +38,10 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+#if UNITY_EDITOR
+        Debug.Log("Quit Game");
+#else
         Application.Quit();
+#endif
     }
 }
