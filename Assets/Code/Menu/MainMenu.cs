@@ -14,9 +14,17 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void OpenOptions()
+    public void OpenOptions(int x = 0)
     {
-        ActiveOptions++;
+        switch (++ActiveOptions)
+        {
+            case 1:
+                Options.SetActive(true);
+                break;
+            case 2:
+                AdvancedOptions[x].SetActive(true);
+                break;
+        }
     }
 
     public void Back()
