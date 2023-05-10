@@ -39,7 +39,7 @@ public class MainMenu : MonoBehaviour
     public void QuitGame()
     {
 #if UNITY_EDITOR
-        Debug.Log("Quit Game");
+        UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();
 #endif
