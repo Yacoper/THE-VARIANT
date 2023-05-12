@@ -17,3 +17,4 @@ MonoBehaviour:
   voiceRecord: {fileID: 8300000, guid: e7cf1f835551e3845ac8c524080317e3, type: 3}
   duration: 0.05
   character: Dr Wilson
+  breakAfter: 4
