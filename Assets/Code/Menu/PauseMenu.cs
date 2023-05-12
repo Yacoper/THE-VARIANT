@@ -13,10 +13,17 @@ public class PauseMenu : MonoBehaviour
     private bool Paused = false;
     private int Options = 0;
 
+    [SerializeField] private AudioSource[] audioSources;
+
     private void OnEnable()
     {
         PauseVisual.SetActive(false);
         inputReader.PauseGameAction += Pause;
+    }
+
+    private void OnDisable()
+    {
+        inputReader.PauseGameAction -= Pause;
     }
 
     private void Pause(InputAction.CallbackContext callbackContext) => Pause();
@@ -39,9 +46,17 @@ public class PauseMenu : MonoBehaviour
         PauseVisual.SetActive(Paused);
         Cursor.visible = true;
         if (Paused)
+        {
             Time.timeScale = 0f;
+            foreach (AudioSource audioSource in audioSources)
+                audioSource.Pause();
+        }
         else
+        {
             Time.timeScale = 1f;
+            foreach (AudioSource audioSource in audioSources)
+                audioSource.UnPause();
+        }
     }
 
     public void Resume()
