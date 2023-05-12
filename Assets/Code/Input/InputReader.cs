@@ -41,9 +41,16 @@ public class InputReader : ScriptableObject
         remove => gameInput.Gameplay.PickUpDrop.performed -= value;
     } 
     
-    public event Action<InputAction.CallbackContext> UseCube
+    public event Action<InputAction.CallbackContext> UseCubeAction
     {
         add => gameInput.Gameplay.UseCube.performed += value;
         remove => gameInput.Gameplay.UseCube.performed -= value;
-    } 
+    }
+    
+    public event Action<InputAction.CallbackContext> PauseGameAction
+    {
+        add => gameInput.Gameplay.PauseGame.performed += value;
+        remove => gameInput.Gameplay.PauseGame.performed -= value;
+    }
+
 }

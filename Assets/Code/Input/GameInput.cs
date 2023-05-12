@@ -73,9 +73,18 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UseCube"",
+                    ""name"": ""UseCubeAction"",
                     ""type"": ""Button"",
                     ""id"": ""b4aecd4c-e1a5-414c-a224-a414838d9cfa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PauseGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""a295b5d5-5d32-4799-bac7-d61a4a1a24d5"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -265,7 +274,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""PickUpDrop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -276,8 +285,19 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""UseCube"",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""UseCubeAction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09d1bd9c-21f7-4508-80de-8c7e5f3e6564"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -837,7 +857,8 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_PickUpDrop = m_Gameplay.FindAction("PickUpDrop", throwIfNotFound: true);
-        m_Gameplay_UseCube = m_Gameplay.FindAction("UseCube", throwIfNotFound: true);
+        m_Gameplay_UseCube = m_Gameplay.FindAction("UseCubeAction", throwIfNotFound: true);
+        m_Gameplay_PauseGame = m_Gameplay.FindAction("PauseGame", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -917,6 +938,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_PickUpDrop;
     private readonly InputAction m_Gameplay_UseCube;
+    private readonly InputAction m_Gameplay_PauseGame;
     public struct GameplayActions
     {
         private @GameInput m_Wrapper;
@@ -927,6 +949,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @PickUpDrop => m_Wrapper.m_Gameplay_PickUpDrop;
         public InputAction @UseCube => m_Wrapper.m_Gameplay_UseCube;
+        public InputAction @PauseGame => m_Wrapper.m_Gameplay_PauseGame;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -954,6 +977,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @UseCube.started += instance.OnUseCube;
             @UseCube.performed += instance.OnUseCube;
             @UseCube.canceled += instance.OnUseCube;
+            @PauseGame.started += instance.OnPauseGame;
+            @PauseGame.performed += instance.OnPauseGame;
+            @PauseGame.canceled += instance.OnPauseGame;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -976,6 +1002,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @UseCube.started -= instance.OnUseCube;
             @UseCube.performed -= instance.OnUseCube;
             @UseCube.canceled -= instance.OnUseCube;
+            @PauseGame.started -= instance.OnPauseGame;
+            @PauseGame.performed -= instance.OnPauseGame;
+            @PauseGame.canceled -= instance.OnPauseGame;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1137,6 +1166,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         void OnLook(InputAction.CallbackContext context);
         void OnPickUpDrop(InputAction.CallbackContext context);
         void OnUseCube(InputAction.CallbackContext context);
+        void OnPauseGame(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
