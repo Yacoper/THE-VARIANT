@@ -15,12 +15,12 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
 
     private void OnEnable()
     {
-        inputReader.UseCube += UseRedCube;
+        inputReader.UseCubeAction += UseRedCubeAction;
     }
 
     private void OnDisable()
     {
-        inputReader.UseCube -= UseRedCube;
+        inputReader.UseCubeAction -= UseRedCubeAction;
     }
     
     public void ApplyBuffFromCube(BuffTypes buffType, CubeDataSO cubeData)
@@ -37,7 +37,7 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
         isBuffApplied = false;
     }
 
-    private void UseRedCube(InputAction.CallbackContext callbackContext)
+    private void UseRedCubeAction(InputAction.CallbackContext callbackContext)
     {
         if(isOnCooldown)
             return;

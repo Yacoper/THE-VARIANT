@@ -27,13 +27,13 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
     private void OnEnable()
     {
         inputReader.JumpAction += Jump;
-        inputReader.UseCube += ToggleBuff;
+        inputReader.UseCubeAction += ToggleBuff;
     }
 
     private void OnDisable()
     {
         inputReader.JumpAction -= Jump;
-        inputReader.UseCube -= ToggleBuff;
+        inputReader.UseCubeAction -= ToggleBuff;
     }
 
     private void Awake()
