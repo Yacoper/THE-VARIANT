@@ -71,8 +71,11 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    public void BackToMenu() =>
+    public void BackToMenu()
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+    }
 
     public void QuitGame()
     {
