@@ -10,4 +10,5 @@ public class SOVoice : ScriptableObject
     public AudioClip voiceRecord;
     public float duration;
     public string character;
+    public float breakAfter;
 }
