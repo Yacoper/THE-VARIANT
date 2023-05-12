@@ -16,3 +16,4 @@ MonoBehaviour:
   voiceRecord: {fileID: 8300000, guid: 287d74f8b4b9a214090d30206e9f88dd, type: 3}
   duration: 0.1
   character: Alert
+  breakAfter: 4
