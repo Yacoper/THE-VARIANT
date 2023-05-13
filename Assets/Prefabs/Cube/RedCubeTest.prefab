@@ -44,10 +44,10 @@ GameObject:
   - component: {fileID: 7122027098423893458}
   - component: {fileID: 7122027098423893459}
   - component: {fileID: 7122027098423893460}
-  - component: {fileID: 7122027098423893461}
   - component: {fileID: 7122027098423893462}
   - component: {fileID: 7122027098423893463}
   - component: {fileID: 7122027098423893464}
+  - component: {fileID: 605172988}
   m_Layer: 6
   m_Name: RedCubeTest
   m_TagString: Cube
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 653
+  m_VersionIndex: 698
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -357,14 +357,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &7122027098423893461
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7122027098423893465}
-  m_Mesh: {fileID: 0}
 --- !u!64 &7122027098423893462
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -409,6 +401,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffType: 1
   cubeData: {fileID: 11400000, guid: 6ac884fa8e50e034ea17aa2ab035761f, type: 2}
+  desiredTime: 2
+  desiredScale: {x: 1, y: 1, z: 1}
+--- !u!33 &605172988
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7122027098423893465}
+  m_Mesh: {fileID: 0}
 --- !u!1001 &2214433937859969263
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,35 +2,24 @@ using UnityEngine;
 
 public abstract class PickUpAbleItem : MonoBehaviour
 {
-    private Rigidbody itemRigidbody;
-    private Transform itemTargetTransform;
-    private Collider itemCollider;
+    protected Rigidbody itemRigidbody;
+    protected Transform itemTargetTransform;
+    protected Collider itemCollider;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         itemRigidbody = GetComponent<Rigidbody>();
         itemCollider = GetComponent<Collider>();
     }
 
-    private void FixedUpdate()
-    {
-        float lerpSpeed = 100f;
-        if (itemTargetTransform != null)
-        {
-            Vector3 newPosition = Vector3.Lerp(transform.position, itemTargetTransform.transform.position,
-                lerpSpeed * Time.fixedDeltaTime);
-            itemRigidbody.MovePosition(newPosition);
-        }
-    }
-
-    public void PickUp(Transform pickUpTargetTransform)
+    public virtual void PickUp(Transform pickUpTargetTransform)
     {
         itemTargetTransform = pickUpTargetTransform;
         itemRigidbody.isKinematic = true;
         itemCollider.enabled = false;
     }
 
-    public void Drop()
+    public virtual void Drop()
     {
         itemTargetTransform = null;
         itemRigidbody.isKinematic = false;
