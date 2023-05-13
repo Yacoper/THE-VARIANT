@@ -401,7 +401,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffType: 1
   cubeData: {fileID: 11400000, guid: 6ac884fa8e50e034ea17aa2ab035761f, type: 2}
-  desiredTime: 2
+  desiredTime: 2.5
   desiredScale: {x: 1, y: 1, z: 1}
 --- !u!33 &605172988
 MeshFilter:

@@ -377,6 +377,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buffType: 2
   cubeData: {fileID: 11400000, guid: 092859846f1bab74386e93df2f1528cd, type: 2}
+  desiredTime: 2.5
+  desiredScale: {x: 1, y: 1, z: 1}
 --- !u!1001 &3045509544034436838
 PrefabInstance:
   m_ObjectHideFlags: 0
