@@ -17,7 +17,6 @@ public class PlayerItemsInteraction : MonoBehaviour
     private PlayerAnimController playerAnimController;
     private Cube cube;
     private PickUpItem item;
-    
     private bool hasItemInHand;
 
     private void Awake()
