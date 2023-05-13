@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class VoiceTrigger : MonoBehaviour
 {
+    [Header("Input")]
+    [SerializeField] private InputReader inputReader;
+
     public SOVoice[] soVoice;
 
     public TextMeshProUGUI voiceLineUI;
@@ -17,10 +21,28 @@ public class VoiceTrigger : MonoBehaviour
     private static bool isCurrentlyPlaying = false;
     private Queue<SOVoice> soVoiceArray;
 
+    private void OnEnable()
+    {
+        inputReader.SkipDialogueAction += OnSkipDialogueAction;
+    }
+
+    private void OnSkipDialogueAction(InputAction.CallbackContext obj)
+    {
+        StopAllCoroutines();
+        voiceLine.Stop();
+        voiceLineUI.text = String.Empty;
+        voiceLineBaner.SetActive(false);
+        isCurrentlyPlaying = false;
+    }
+
+    private void OnDisable()
+    {
+        inputReader.SkipDialogueAction -= OnSkipDialogueAction;
+    }
     void Start()
     {
         voiceLineUI.text = String.Empty;
-        soVoiceArray = new Queue<SOVoice> ();
+        soVoiceArray = new Queue<SOVoice>();
     }
 
     void OnTriggerEnter(Collider other)
