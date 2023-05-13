@@ -72,7 +72,7 @@ public class VoiceTrigger : MonoBehaviour
             voiceLineUI.text += c;
             yield return new WaitForSeconds(sov.duration);
         }
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(sov.breakAfter);
         voiceLineUI.text = String.Empty;
         voiceLineBaner.SetActive(false);
         isCurrentlyPlaying = false;

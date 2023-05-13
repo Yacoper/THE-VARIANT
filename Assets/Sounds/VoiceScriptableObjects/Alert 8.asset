@@ -15,6 +15,7 @@ MonoBehaviour:
   voiceLineText: 'All of the tests have been completed with time better by 7% than
     the last one. Accuracy of movement coordination: 89%. Stability of prosthesis
     connection: stable, 70%. Negative influence of cubes on test subject: non-significant.'
-  voiceRecord: {fileID: 8300000, guid: 2d0d8f5e8d28ef7409575127a8ce8516, type: 3}
+  voiceRecord: {fileID: 8300000, guid: 287d74f8b4b9a214090d30206e9f88dd, type: 3}
   duration: 0.1
   character: Alert
+  breakAfter: 4
