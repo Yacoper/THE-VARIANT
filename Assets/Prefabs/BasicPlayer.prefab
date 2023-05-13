@@ -313,13 +313,15 @@ GameObject:
   - component: {fileID: 2394663039755632889}
   - component: {fileID: 6114290967144574405}
   - component: {fileID: 1781684535515788350}
+  - component: {fileID: 2186264909314758372}
+  - component: {fileID: 2377249947422710454}
   m_Layer: 0
   m_Name: BasicPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4111454226316908199
 Transform:
   m_ObjectHideFlags: 0
@@ -478,6 +480,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputReader: {fileID: 11400000, guid: 295060c583aca9145a7e7f2b73930ab8, type: 2}
   playerCameraTransform: {fileID: 4111454224826581585}
+--- !u!114 &2186264909314758372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111454226316908195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a483f1de9405bf24c9d64fadab1efd57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHandAnimator: {fileID: 5546832292702392795}
+  fingerGunParameterName: FingerGun
+  handFuckParameterName: HandFuck
+--- !u!114 &2377249947422710454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4111454226316908195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06bd754090a117b4ca2d885003e7711d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 295060c583aca9145a7e7f2b73930ab8, type: 2}
 --- !u!1 &8656058035822904236
 GameObject:
   m_ObjectHideFlags: 0
