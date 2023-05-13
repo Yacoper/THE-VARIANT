@@ -18,7 +18,8 @@ public class Cube : PickUpAbleItem
     [SerializeField] private BuffTypes buffType;
     [SerializeField] private CubeDataSO cubeData;
     [SerializeField] private float desiredTime = 2f;
-    [SerializeField] private Vector3 desiredScale = new Vector3(0.5f, 0.5f, 0.5f);
+    [SerializeField] private Vector3 desiredScale = new(0.5f, 0.5f, 0.5f);
+    [SerializeField] private Vector3 desiredRotation = new(2f, -70f, 2f);
 
 
     public override void PickUp(Transform pickUpTargetTransform)
@@ -31,6 +32,7 @@ public class Cube : PickUpAbleItem
         cubeTransform.parent = itemTargetTransform;
         transform.DOScale(desiredScale, desiredTime);
         transform.DOMove(pickUpTargetTransform.position, desiredTime);
+        transform.DORotate(desiredRotation, desiredTime);
     }
 
     public override void Drop()
