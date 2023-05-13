@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4111454226316908199}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &307892479
 AudioSource:
@@ -335,7 +335,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4111454224826581585}
-  - {fileID: 94505452186844013}
   - {fileID: 307892480}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -495,6 +494,8 @@ MonoBehaviour:
   leftHandAnimator: {fileID: 5546832292702392795}
   fingerGunParameterName: FingerGun
   handFuckParameterName: HandFuck
+  cubeGrabParameterName: CubeGrab
+  cubeDropParameterName: CubeDrop
 --- !u!114 &2377249947422710454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,7 +519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 94505452186844013}
   m_Layer: 0
-  m_Name: RightHand
+  m_Name: LeftHandTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,11 +533,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8656058035822904236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.278, y: 0.313, z: 0.835}
+  m_LocalPosition: {x: -0.121, y: 0.04, z: 0.423}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4111454226316908199}
+  m_Father: {fileID: 7909533668977312187}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1923102358368969199
@@ -759,6 +760,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHand
       objectReference: {fileID: 0}
+    - target: {fileID: 4398339884025086725, guid: 97d374f2d4858e048b95129435c4db6a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97d374f2d4858e048b95129435c4db6a, type: 3}
 --- !u!4 &6015937737382532710 stripped
@@ -793,6 +799,12 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!4 &7909533668977312187 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4121375256861634614, guid: 97d374f2d4858e048b95129435c4db6a,
+    type: 3}
+  m_PrefabInstance: {fileID: 6122184110119121293}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6181008774094945259
 PrefabInstance:
   m_ObjectHideFlags: 0

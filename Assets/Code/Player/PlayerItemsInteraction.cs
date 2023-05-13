@@ -14,6 +14,7 @@ public class PlayerItemsInteraction : MonoBehaviour
     [SerializeField] private Transform pickUpTargetTransform;
 
     private PlayerBuffController playerBuffController;
+    private PlayerAnimController playerAnimController;
     private Cube cube;
     private PickUpItem item;
     
@@ -22,6 +23,7 @@ public class PlayerItemsInteraction : MonoBehaviour
     private void Awake()
     {
         playerBuffController = GetComponent<PlayerBuffController>();
+        playerAnimController = GetComponent<PlayerAnimController>();
     }
 
     private void OnEnable()
@@ -63,6 +65,7 @@ public class PlayerItemsInteraction : MonoBehaviour
         cube = raycastHit.transform.GetComponent<Cube>();
         cube.PickUp(pickUpTargetTransform);
         playerBuffController.SetBuffAvailable(cube.BuffType, cube.CubeData);
+        playerAnimController.PlayGrabCubeAnim();
         hasItemInHand = true;
     }
     
@@ -83,6 +86,7 @@ public class PlayerItemsInteraction : MonoBehaviour
         else
         {
             playerBuffController.ClearBuff(cube.BuffType);
+            playerAnimController.PlayDropCubeAnim();
             cube.Drop();
             cube = null;
         }
