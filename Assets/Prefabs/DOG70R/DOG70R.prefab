@@ -133,3 +133,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &4996629334411646934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1104733674072928155, guid: d36e82d3e764fc44ca816b9011525ed2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3890166128502081459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &3823588143831961133
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4996629334411646934}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 7.353342
+  m_Height: 14.706684
+  m_Direction: 1
+  m_Center: {x: 0.63425845, y: 4.9119883, z: 0.012465481}
