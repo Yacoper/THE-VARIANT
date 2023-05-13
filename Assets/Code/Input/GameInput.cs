@@ -73,7 +73,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""UseCubeAction"",
+                    ""name"": ""UseCube"",
                     ""type"": ""Button"",
                     ""id"": ""b4aecd4c-e1a5-414c-a224-a414838d9cfa"",
                     ""expectedControlType"": ""Button"",
@@ -85,6 +85,33 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""name"": ""PauseGame"",
                     ""type"": ""Button"",
                     ""id"": ""a295b5d5-5d32-4799-bac7-d61a4a1a24d5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkipDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""3de051bc-5366-4888-bc86-97e3db865e06"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""FingerGun"",
+                    ""type"": ""Button"",
+                    ""id"": ""86523e09-d2da-467c-8630-e45efb46a9a9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HandFuck"",
+                    ""type"": ""Button"",
+                    ""id"": ""26d5281e-5e86-4a85-80a4-1e660bc934af"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -109,7 +136,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -120,7 +147,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -131,7 +158,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -142,7 +169,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -164,7 +191,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -175,7 +202,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/downArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -186,7 +213,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -197,7 +224,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -219,7 +246,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -263,7 +290,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -286,7 +313,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""UseCubeAction"",
+                    ""action"": ""UseCube"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -298,6 +325,39 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""PauseGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0d64dec9-8b76-4911-95d3-08af5854ceef"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SkipDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf6d222a-45ad-47fb-b445-1f992accb63c"",
+                    ""path"": ""<Keyboard>/g"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""FingerGun"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""da8461c8-a6eb-46b3-a1af-0b44b6675139"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""HandFuck"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -857,8 +917,11 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_PickUpDrop = m_Gameplay.FindAction("PickUpDrop", throwIfNotFound: true);
-        m_Gameplay_UseCube = m_Gameplay.FindAction("UseCubeAction", throwIfNotFound: true);
+        m_Gameplay_UseCube = m_Gameplay.FindAction("UseCube", throwIfNotFound: true);
         m_Gameplay_PauseGame = m_Gameplay.FindAction("PauseGame", throwIfNotFound: true);
+        m_Gameplay_SkipDialogue = m_Gameplay.FindAction("SkipDialogue", throwIfNotFound: true);
+        m_Gameplay_FingerGun = m_Gameplay.FindAction("FingerGun", throwIfNotFound: true);
+        m_Gameplay_HandFuck = m_Gameplay.FindAction("HandFuck", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -939,6 +1002,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_PickUpDrop;
     private readonly InputAction m_Gameplay_UseCube;
     private readonly InputAction m_Gameplay_PauseGame;
+    private readonly InputAction m_Gameplay_SkipDialogue;
+    private readonly InputAction m_Gameplay_FingerGun;
+    private readonly InputAction m_Gameplay_HandFuck;
     public struct GameplayActions
     {
         private @GameInput m_Wrapper;
@@ -950,6 +1016,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         public InputAction @PickUpDrop => m_Wrapper.m_Gameplay_PickUpDrop;
         public InputAction @UseCube => m_Wrapper.m_Gameplay_UseCube;
         public InputAction @PauseGame => m_Wrapper.m_Gameplay_PauseGame;
+        public InputAction @SkipDialogue => m_Wrapper.m_Gameplay_SkipDialogue;
+        public InputAction @FingerGun => m_Wrapper.m_Gameplay_FingerGun;
+        public InputAction @HandFuck => m_Wrapper.m_Gameplay_HandFuck;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -980,6 +1049,15 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @PauseGame.started += instance.OnPauseGame;
             @PauseGame.performed += instance.OnPauseGame;
             @PauseGame.canceled += instance.OnPauseGame;
+            @SkipDialogue.started += instance.OnSkipDialogue;
+            @SkipDialogue.performed += instance.OnSkipDialogue;
+            @SkipDialogue.canceled += instance.OnSkipDialogue;
+            @FingerGun.started += instance.OnFingerGun;
+            @FingerGun.performed += instance.OnFingerGun;
+            @FingerGun.canceled += instance.OnFingerGun;
+            @HandFuck.started += instance.OnHandFuck;
+            @HandFuck.performed += instance.OnHandFuck;
+            @HandFuck.canceled += instance.OnHandFuck;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1005,6 +1083,15 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @PauseGame.started -= instance.OnPauseGame;
             @PauseGame.performed -= instance.OnPauseGame;
             @PauseGame.canceled -= instance.OnPauseGame;
+            @SkipDialogue.started -= instance.OnSkipDialogue;
+            @SkipDialogue.performed -= instance.OnSkipDialogue;
+            @SkipDialogue.canceled -= instance.OnSkipDialogue;
+            @FingerGun.started -= instance.OnFingerGun;
+            @FingerGun.performed -= instance.OnFingerGun;
+            @FingerGun.canceled -= instance.OnFingerGun;
+            @HandFuck.started -= instance.OnHandFuck;
+            @HandFuck.performed -= instance.OnHandFuck;
+            @HandFuck.canceled -= instance.OnHandFuck;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1167,6 +1254,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         void OnPickUpDrop(InputAction.CallbackContext context);
         void OnUseCube(InputAction.CallbackContext context);
         void OnPauseGame(InputAction.CallbackContext context);
+        void OnSkipDialogue(InputAction.CallbackContext context);
+        void OnFingerGun(InputAction.CallbackContext context);
+        void OnHandFuck(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -52,5 +52,23 @@ public class InputReader : ScriptableObject
         add => gameInput.Gameplay.PauseGame.performed += value;
         remove => gameInput.Gameplay.PauseGame.performed -= value;
     }
+    
+    public event Action<InputAction.CallbackContext> SkipDialogueAction
+    {
+        add => gameInput.Gameplay.SkipDialogue.performed += value;
+        remove => gameInput.Gameplay.SkipDialogue.performed -= value;
+    }
+    
+    public event Action<InputAction.CallbackContext> FingerGunAction
+    {
+        add => gameInput.Gameplay.FingerGun.performed += value;
+        remove => gameInput.Gameplay.FingerGun.performed -= value;
+    }
+    
+    public event Action<InputAction.CallbackContext> HandFuckAction
+    {
+        add => gameInput.Gameplay.HandFuck.performed += value;
+        remove => gameInput.Gameplay.HandFuck.performed -= value;
+    }
 
 }
