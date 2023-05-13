@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,10 @@ public class PlayerItemsInteraction : MonoBehaviour
 
     private PlayerBuffController playerBuffController;
     private PlayerAnimController playerAnimController;
+
+    private PlayerMovement playerMovement;
+    private PlayerLook playerLook;
+    
     private Cube cube;
     private PickUpItem item;
     private bool hasItemInHand;
@@ -23,6 +28,9 @@ public class PlayerItemsInteraction : MonoBehaviour
     {
         playerBuffController = GetComponent<PlayerBuffController>();
         playerAnimController = GetComponent<PlayerAnimController>();
+
+        playerMovement = GetComponent<PlayerMovement>();
+        playerLook = GetComponent<PlayerLook>();
     }
 
     private void OnEnable()
@@ -61,6 +69,7 @@ public class PlayerItemsInteraction : MonoBehaviour
 
     private void PickUpCube(RaycastHit raycastHit)
     {
+        StartCoroutine(FreezePlayerForCubePickUp());
         cube = raycastHit.transform.GetComponent<Cube>();
         cube.PickUp(pickUpTargetTransform);
         playerBuffController.SetBuffAvailable(cube.BuffType, cube.CubeData);
@@ -91,6 +100,15 @@ public class PlayerItemsInteraction : MonoBehaviour
         }
 
         hasItemInHand = false;
+    }
+
+    private IEnumerator FreezePlayerForCubePickUp()
+    {
+        playerMovement.enabled = false;
+        playerLook.enabled = false;
+        yield return new WaitForSeconds(2.5f);
+        playerMovement.enabled = true;
+        playerLook.enabled = true;
     }
 
     private void OnValidate()
