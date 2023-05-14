@@ -267,7 +267,7 @@
                     "id": "a0956a79-e9e5-4d6f-8b6d-817f0e2e162d",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(x=3.5,y=3.5)",
                     "groups": "Gamepad",
                     "action": "Look",
                     "isComposite": false,
@@ -286,11 +286,33 @@
                 },
                 {
                     "name": "",
+                    "id": "806499fc-74ba-4bae-82a7-7228b180b1ab",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "PickUpDrop",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "e3ff37b9-ff8c-4823-a037-42f1698126fc",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "UseCube",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17d5cc77-9026-4f28-b998-c96e7132920c",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "UseCube",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -308,11 +330,33 @@
                 },
                 {
                     "name": "",
+                    "id": "b5a2998f-eeb4-44c2-8a6d-762f5741e59e",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "PauseGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "0d64dec9-8b76-4911-95d3-08af5854ceef",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "SkipDialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3abe5fa3-2c58-494b-808b-d93950cb06f2",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "SkipDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -330,11 +374,33 @@
                 },
                 {
                     "name": "",
+                    "id": "db14ce46-3c4a-452c-9041-42e4fcd37ec6",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "FingerGun",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "da8461c8-a6eb-46b3-a1af-0b44b6675139",
                     "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
+                    "action": "HandFuck",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e642a80e-5696-48cb-b12c-8e4bc76cc552",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
                     "action": "HandFuck",
                     "isComposite": false,
                     "isPartOfComposite": false
