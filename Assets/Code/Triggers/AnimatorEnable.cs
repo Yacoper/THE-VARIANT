@@ -18,7 +18,5 @@ public class AnimatorEnable : MonoBehaviour
         {
             BoxCollider.enabled = true;
         }
-        else
-            BoxCollider.enabled = false;
     }
 }
