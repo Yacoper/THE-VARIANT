@@ -8,10 +8,15 @@ public class MainMenu : MonoBehaviour
     private int ActiveOptions = 0;
     [SerializeField] private GameObject Options;
     [SerializeField] private GameObject[] AdvancedOptions;
+    [SerializeField] private GameObject LoadingScreen;
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        try { LoadingScreen.SetActive(true); }
+        catch
+        {
+            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void OpenOptions(int x = 0)
