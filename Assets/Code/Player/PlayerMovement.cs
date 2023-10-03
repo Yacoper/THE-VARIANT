@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
 {
@@ -9,14 +10,17 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
     [SerializeField] private InputReader inputReader;
     [Header("Player Settings")]
     [SerializeField] private PlayerMovementSettingsSO values;
-    
+
+    [SerializeField] private GameObject buffCanva;
+    [SerializeField] private Material BuffShader;
+
     private CharacterController characterController;
     private Vector3 moveDir;
     private Vector3 yVelocity;
     
     private bool isGrounded;
     private bool isBuffApplied;
-    
+
     private bool isBlueOnCooldown;
     private bool isGreenOnCooldown;
 
@@ -28,7 +32,7 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
     {
         inputReader.JumpAction += Jump;
         inputReader.UseCubeAction += ToggleBuff;
-    }
+}
 
     private void OnDisable()
     {
@@ -131,8 +135,14 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
 
     private void ToggleBuff(InputAction.CallbackContext callbackContext)
     {
-        if(currentBuffAvailable == BuffTypes.None)
+        Animator BuffCanvaAnim = buffCanva.GetComponentInChildren<Animator>();
+        if (currentBuffAvailable == BuffTypes.None)
             return;
+
+        if(currentBuffAvailable == BuffTypes.BlueBuff)
+            BuffShader.SetColor("_MainColor", Color.blue);
+        else
+            BuffShader.SetColor("_MainColor", Color.green);
 
         if (isBuffApplied)
         {
@@ -147,6 +157,9 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
                 isGreenOnCooldown = true;
                 StartCoroutine(GreenCooldown(greenCubeData.Cooldown));
             }
+            BuffCanvaAnim.SetTrigger("LeaveBuff");
+            buffCanva.SetActive(false);
+            BuffShader.SetColor("_MainColor", Color.red);
         }
         
         if(currentBuffAvailable == BuffTypes.BlueBuff && isBlueOnCooldown)
@@ -155,6 +168,8 @@ public class PlayerMovement : MonoBehaviour, IApplyBuffFromCube
         if(currentBuffAvailable == BuffTypes.GreenBuff && isGreenOnCooldown)
             return;
 
+        buffCanva.SetActive(true);
+        BuffCanvaAnim.SetTrigger("PlayBuff");
         isBuffApplied = true;
     }
 

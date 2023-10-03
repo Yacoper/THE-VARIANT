@@ -6,6 +6,7 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
 {
     [SerializeField] private InputReader inputReader;
     [SerializeField] private Transform playerCameraTransform;
+    [SerializeField] private GameObject buffCanva;
 
     private RedCubeDataSO currentCubeData;
     private BuffTypes currentBuffAvailable;
@@ -28,6 +29,9 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
         currentBuffAvailable = buffType;
         currentCubeData = cubeData as RedCubeDataSO;
         isBuffApplied = true;
+        buffCanva.SetActive(true);
+        Animator BuffCanvaAnim = buffCanva.GetComponentInChildren<Animator>();
+        BuffCanvaAnim.SetTrigger("PlayBuff");
     }
 
     public void ClearBuffFromCube()
@@ -35,6 +39,9 @@ public class PlayerRedCubePower : MonoBehaviour, IApplyBuffFromCube
         currentBuffAvailable = BuffTypes.None;
         currentCubeData = null;
         isBuffApplied = false;
+        Animator BuffCanvaAnim = buffCanva.GetComponentInChildren<Animator>();
+        BuffCanvaAnim.SetTrigger("LeaveBuff");
+        buffCanva.SetActive(false);
     }
 
     private void UseRedCubeAction(InputAction.CallbackContext callbackContext)

@@ -14,6 +14,9 @@ public class PlayerItemsInteraction : MonoBehaviour
     [SerializeField] private Transform playerCameraTransform;
     [SerializeField] private Transform pickUpTargetTransform;
 
+    [SerializeField] private GameObject buffCanva;
+    [SerializeField] private Material BuffShader;
+
     private PlayerBuffController playerBuffController;
     private PlayerAnimController playerAnimController;
 
@@ -100,6 +103,11 @@ public class PlayerItemsInteraction : MonoBehaviour
         }
 
         hasItemInHand = false;
+
+        Animator BuffCanvaAnim = buffCanva.GetComponentInChildren<Animator>();
+        BuffCanvaAnim.SetTrigger("LeaveBuff");
+        buffCanva.SetActive(false);
+        BuffShader.SetColor("_MainColor", Color.red);
     }
 
     private IEnumerator FreezePlayerForCubePickUp()

@@ -7,7 +7,7 @@ public class PlayerBuffController : MonoBehaviour
     [SerializeField] private ParticleSystem blueBuff;
     [SerializeField] private ParticleSystem redBuff;
     [SerializeField] private ParticleSystem greenBuff;
-    
+
     private PlayerMovement playerMovement;
     private PlayerRedCubePower playerRedCubePower;
 
